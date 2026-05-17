@@ -96,7 +96,7 @@ export function CampaignsSection() {
             <div className="w-14 h-14 rounded-2xl bg-[#fcd34d]/20 text-[#fcd34d] flex items-center justify-center mb-8">
                <Sparkles size={28} aria-hidden="true" />
             </div>
-            <h3 className="text-3xl font-extrabold mb-4">Creators e Fãs</h3>
+            <h3 className="text-3xl font-extrabold mb-4">Criadores e Fãs</h3>
             <p className="text-zinc-400 leading-relaxed mb-8 flex-grow font-medium">
               Não importa se você tem 500 ou 50k seguidores. Seu engajamento autêntico vale PIX na hora ou experiências inesquecíveis na sua cidade.
             </p>

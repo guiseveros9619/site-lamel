@@ -118,13 +118,13 @@ export function TargetingSection() {
 
         {/* Horizontal Cards Layout relative container for arrows */}
         <div className="relative group/carousel">
-          <div 
+          <div
              ref={carouselRef}
              onScroll={handleScroll}
-             className="cards-container flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory no-scrollbar -mx-6 px-6 lg:mx-0 lg:px-0"
+             className="cards-container flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory no-scrollbar"
           >
              {CARDS.map((card) => (
-             <div key={card.id} className="target-card flex flex-col group min-w-[300px] sm:min-w-[340px] md:min-w-[400px] w-[85vw] md:w-[400px] snap-center shrink-0 pl-4 relative">
+             <div key={card.id} className="target-card flex flex-col group min-w-[260px] sm:min-w-[340px] md:min-w-[400px] w-[78vw] md:w-[400px] snap-start shrink-0 relative">
                 
                 {/* Visual Header of Card */}
                 <div className="h-[240px] rounded-[20px] mb-6 relative overflow-hidden flex items-center justify-center">

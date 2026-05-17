@@ -427,7 +427,7 @@ export function StepByStepGuide() {
                 {/* Grupo de Tags 2 (São Paulo) - Inicialmente invisível via CSS puro (display:none é setado no js, mas botamos via opacidade para start seguro) */}
                 <div className="step2-tags-group-2 absolute inset-0 w-full flex gap-3" style={{ display: 'none', opacity: 0 }}>
                     <div className="flex-1 border-2 border-[#facc15] text-white px-4 py-3 rounded-full font-bold flex items-center justify-between bg-black/20">
-                      <span>Funk / Trap</span>
+                      <span>Eletrônico</span>
                       <div className="bg-[#facc15] text-black rounded-full p-0.5"><Check size={14} strokeWidth={4} /></div>
                     </div>
                     <div className="flex-1 border-2 border-[#facc15] text-white px-4 py-3 rounded-full font-bold flex items-center justify-between bg-black/20">
