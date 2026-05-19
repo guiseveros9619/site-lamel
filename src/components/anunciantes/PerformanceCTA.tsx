@@ -10,7 +10,15 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP)
 }
 
-export function PerformanceCTA() {
+export function PerformanceCTA({
+  title = "Transforme seu lançamento em um movimento.",
+  description = "Use a força de fãs reais espalhando sua música pela região. Chega de investir no escuro e torcer por resultados: acompanhe cada vídeo aprovado e o impacto autêntico do seu projeto direto do seu dashboard.",
+  buttonText = "Começar Agora"
+}: {
+  title?: string
+  description?: string
+  buttonText?: string
+}) {
   const container = useRef<HTMLDivElement>(null)
 
   useGSAP(
@@ -38,15 +46,15 @@ export function PerformanceCTA() {
       <div className="container mx-auto max-w-5xl px-6 lg:px-8 text-center">
         
         <h2 className="anim-cta-text text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight mb-8">
-          Transforme seu lançamento em um movimento.
+          {title}
         </h2>
         <p className="anim-cta-text text-xl text-zinc-300 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
-         Use a força de fãs reais espalhando sua música pela região. Chega de investir no escuro e torcer por resultados: acompanhe cada vídeo aprovado e o impacto autêntico do seu projeto direto do seu dashboard.
+         {description}
         </p>
 
         <div className="anim-cta-text">
           <Button className="h-16 rounded-full bg-brand-purple px-10 text-lg font-bold text-black hover:bg-brand-purple-light transition-colors">
-            Começar Agora
+            {buttonText}
           </Button>
         </div>
       </div>

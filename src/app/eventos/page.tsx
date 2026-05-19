@@ -36,7 +36,10 @@ export default function EventosPage() {
       />
 
       <FAQEventos />
-      <PerformanceCTA />
+      <PerformanceCTA 
+        title="O hype que a seu evento merece."
+        description="Pare de gastar com anúncios que são ignorados. Use o poder da influência para criar um desejo incontrolável, vender mais ingressos e lotar a sua próxima edição."
+      />
     </>
   )
 }
