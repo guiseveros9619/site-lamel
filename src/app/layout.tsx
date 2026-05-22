@@ -1,49 +1,44 @@
 import '@/app/globals.css'
 import type { Metadata, Viewport } from 'next'
-import { Urbanist } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider'
 
-const urbanist = Urbanist({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-urbanist',
-  display: 'swap',
-})
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hitlovers.app'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://tshirteria.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Onde a música vira hit e o seu evento lota | Hitlovers',
-    template: '%s | Hitlovers',
+    default: 'Tshirteria | Vista sua essência, sem filtro.',
+    template: '%s | Tshirteria',
   },
   description:
-    'Seus anúncios rendem mais no Spotify. Performance auditada por IA — pague apenas por views reais.',
-  applicationName: 'Hitlovers',
-  authors: [{ name: 'Hitlovers' }],
-  keywords: ['música', 'anúncios', 'spotify', 'artistas', 'eventos', 'criadores', 'campanhas'],
+    'Seja um revendedor credenciado Tshirteria. Produtos premium, até 70% de desconto e suporte completo para o seu negócio.',
+  applicationName: 'Tshirteria',
+  authors: [{ name: 'Tshirteria' }],
+  keywords: ['camisetas', 'atacado', 'revenda', 'personalização', 'private label', 'tsh club'],
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    siteName: 'Hitlovers',
+    siteName: 'Tshirteria',
     url: siteUrl,
-    title: 'Hitlovers | Onde a música vira hit e o seu evento lota',
+    title: 'Tshirteria | Vista sua essência, sem filtro.',
     description:
-      'Seus anúncios rendem mais no Spotify. Performance auditada por IA — pague apenas por views reais.',
+      'Seja um revendedor credenciado Tshirteria. Produtos premium, até 70% de desconto e suporte completo.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hitlovers',
-    description: 'Seus anúncios rendem mais no Spotify.',
+    title: 'Tshirteria',
+    description: 'Seja um revendedor credenciado Tshirteria.',
+  },
+  icons: {
+    icon: '/favicon.png',
   },
   robots: { index: true, follow: true },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#121212',
+  themeColor: '#F2EDE2', // brand-beige
   width: 'device-width',
   initialScale: 1,
 }
@@ -55,12 +50,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      {/* We will load fonts via external stylesheet for now to avoid the build error */}
+      <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet" />
+        <style dangerouslySetInnerHTML={{ __html: `
+          :root {
+            --font-satoshi: 'Satoshi', system-ui, sans-serif;
+            --font-made-tommy: 'Satoshi', system-ui, sans-serif; /* Fallback for Made Tommy */
+          }
+          .font-heading { font-weight: 900; }
+        ` }} />
+      </head>
       <body
-        className={`${urbanist.className} ${urbanist.variable} min-h-screen bg-[#121212] text-white antialiased selection:bg-[#d8b4fe] selection:text-black flex flex-col`}
+        className="min-h-screen bg-brand-beige text-brand-black antialiased selection:bg-brand-orange selection:text-white flex flex-col font-sans"
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-black focus:shadow-lg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:rounded-md focus:bg-brand-black focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-orange"
         >
           Pular para o conteúdo
         </a>

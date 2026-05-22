@@ -1,20 +1,21 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/animations/Hero'
+import { VideoInstitucional } from '@/components/layout/VideoInstitucional'
+import { LookbookCarousel } from '@/components/layout/LookbookCarousel'
 import { NumbersSection } from '@/components/layout/NumbersSection'
-import { SpotifyCarousel } from '@/components/animations/SpotifyCarousel'
-import { StorySection } from '@/components/layout/StorySection'
 import { CampaignsSection } from '@/components/layout/CampaignsSection'
-import { NewsTrendsSection } from '@/components/layout/NewsTrendsSection'
+import { StorySection } from '@/components/layout/StorySection'
+import { PromoSection } from '@/components/layout/PromoSection'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Onde a música vira hit e o seu evento lota | Hitlovers',
+    absolute: 'Tshirteria | Personalize, crie e revenda!',
   },
   description:
-    'Conectamos artistas, eventos e criadores de conteúdo no Spotify. Performance auditada por IA — pague apenas por views reais.',
+    'Seja um revendedor credenciado Tshirteria. Produtos premium, até 70% de desconto e suporte completo para o seu negócio.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Onde a música vira hit e o seu evento lota | Hitlovers',
+    title: 'Tshirteria | Personalize, crie e revenda!',
     url: '/',
   },
 }
@@ -23,11 +24,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <NumbersSection />
-      <SpotifyCarousel />
+      <VideoInstitucional />
+      <LookbookCarousel />
       <StorySection />
+      <PromoSection />
       <CampaignsSection />
-      <NewsTrendsSection />
+      <NumbersSection />
     </>
   )
 }

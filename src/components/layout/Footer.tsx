@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/appDownload'
 
 const TikTokLogo = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
@@ -19,78 +18,65 @@ const YouTubeLogo = () => (
   </svg>
 )
 
-const AppleIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-6 h-6 text-white fill-current" aria-hidden="true">
-    <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" />
-  </svg>
-)
-
-const GooglePlayIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-6 h-6 text-white fill-current" aria-hidden="true">
-    <path d="M3 21.68V2.32c0-.52.56-.84 1.01-.58l16.78 9.68c.45.26.45.9 0 1.16L4.01 22.26c-.45.26-1.01-.06-1.01-.58z"/>
+const TelegramLogo = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
+    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394a.734.734 0 0 1-.58.28l.21-3.05 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
   </svg>
 )
 
 const LINK_COLUMNS = [
   {
-    title: 'Anunciantes',
+    title: 'Links úteis',
     links: [
-      { label: 'Artistas & Escritórios', href: '/artistas' },
-      { label: 'Eventos & Produtores', href: '/eventos' },
+      { label: 'E-commerce', href: 'https://www.tshirteria.com/' },
+      { label: 'Produtos', href: 'https://www.tshirteria.com/products/' },
+      { label: 'Privacidade', href: 'https://www.tshirteria.com/politica_privacidade/' },
     ],
   },
   {
-    title: 'Comunidade',
+    title: 'Serviços',
     links: [
-      { label: 'Criadores', href: '/criadores' },
-      { label: 'Desenvolvedores', href: '/desenvolvedores' },
-    ],
-  },
-  {
-    title: 'hitlovers',
-    links: [
-      { label: 'Campanhas', href: '/anunciantes' },
-      { label: 'Agende uma demo', href: '/demonstracao' },
+      { label: 'Personalização', href: '/personalizacao' },
+      { label: 'TSH Club', href: '/tsh-club' },
+      { label: 'Revendedores', href: '/revendedores' },
     ],
   },
 ]
 
 const SOCIAL_LINKS = [
-  { label: 'TikTok', handle: '@hitlovers.app', href: 'https://tiktok.com/@hitlovers.app', Icon: TikTokLogo },
-  { label: 'Instagram', handle: '@hitlovers.app', href: 'https://instagram.com/hitlovers.app', Icon: InstagramLogo },
-  { label: 'YouTube', handle: '@hitlovers.app', href: 'https://youtube.com/@hitlovers.app', Icon: YouTubeLogo },
-]
-
-const LEGAL_LINKS = [
-  { label: 'Legal', href: '/legal' },
-  { label: 'Centro de Privacidade', href: '/centro-de-privacidade' },
-  { label: 'Política de privacidade', href: '/politica-de-privacidade' },
-  { label: 'Cookies', href: '/cookies' },
-  { label: 'Acessibilidade', href: '/acessibilidade' },
+  { label: 'Instagram', handle: '@tshirteria', href: 'https://instagram.com/tshirteria', Icon: InstagramLogo },
+  { label: 'Telegram', handle: '@tshirteria', href: 'https://t.me/joinchat/AAAAAEVr8sIjhHa5b8zmwA', Icon: TelegramLogo },
+  { label: 'TikTok', handle: '@tshirteria', href: 'https://tiktok.com/@tshirteria', Icon: TikTokLogo },
+  { label: 'YouTube', handle: '@tshirteria', href: 'https://youtube.com/@tshirteria', Icon: YouTubeLogo },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-black pt-20 pb-10 border-t border-white/10">
+    <footer className="bg-brand-black pt-20 pb-10 border-t border-brand-beige/10 text-brand-beige">
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
 
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-1">
-              <span className="text-2xl font-bold tracking-tighter text-white">
-                hit<span className="text-brand-purple">lovers</span>
-              </span>
+          {/* Brand & Slogan */}
+          <div className="lg:col-span-1 flex flex-col items-start gap-4">
+            <Link href="/" className="flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-md">
+              <img 
+                src="/tshirteria-white.png" 
+                alt="Tshirteria Logo" 
+                className="h-10 w-auto object-contain" 
+              />
             </Link>
+            <p className="text-sm font-medium text-brand-beige/70">
+            Personalize, crie e revenda!
+            </p>
           </div>
 
           {LINK_COLUMNS.map((col) => (
             <div key={col.title} className="lg:col-span-1">
-              <h4 className="font-bold text-white mb-6">{col.title}</h4>
+              <h4 className="font-heading font-bold mb-6 text-xl">{col.title}</h4>
               <ul className="flex flex-col gap-4">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="text-zinc-300 hover:text-white transition-colors">
+                    <Link href={link.href} className="text-brand-beige/70 hover:text-brand-orange font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm">
                       {link.label}
                     </Link>
                   </li>
@@ -99,10 +85,16 @@ export function Footer() {
             </div>
           ))}
 
-          {/* Socials */}
+          {/* Contact / Atendimento */}
           <div className="lg:col-span-1">
-            <h4 className="font-bold text-white mb-6">Siga a gente</h4>
-            <ul className="flex flex-row gap-3">
+            <h4 className="font-heading font-bold mb-6 text-xl">Atendimento</h4>
+            <div className="flex flex-col gap-4 text-brand-beige/70 font-medium">
+              <p>Seg. à Sex. 8h às 18h</p>
+              <p>(62) 9 9989-5357</p>
+              <p>sac.tshirteria@gmail.com</p>
+            </div>
+            
+            <ul className="flex flex-row gap-3 mt-8">
               {SOCIAL_LINKS.map(({ label, handle, href, Icon }) => (
                 <li key={label}>
                   <a
@@ -110,7 +102,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${label} ${handle}`}
-                    className="w-10 h-10 rounded-full border border-zinc-600 flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/5 transition-colors"
+                    className="w-10 h-10 rounded-full border border-brand-beige/20 flex items-center justify-center text-brand-beige/70 hover:text-brand-black hover:bg-brand-orange hover:border-brand-orange transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
                   >
                     <Icon />
                   </a>
@@ -119,43 +111,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* App Download */}
-          <div className="lg:col-span-1 flex flex-col gap-4">
-            <h4 className="font-bold text-white mb-2">Baixe o app</h4>
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" aria-label="Baixar na App Store" className="flex items-center gap-3 border border-zinc-600 rounded-lg py-1.5 px-3 bg-black hover:bg-zinc-900 transition-colors min-w-[150px] w-fit">
-              <AppleIcon />
-              <div className="flex flex-col text-left">
-                <span className="text-[10px] leading-tight text-white/90">Baixar na</span>
-                <span className="text-sm font-bold leading-tight text-white">App Store</span>
-              </div>
-            </a>
-            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" aria-label="Disponível no Google Play" className="flex items-center gap-3 border border-zinc-600 rounded-lg py-1.5 px-3 bg-black hover:bg-zinc-900 transition-colors min-w-[150px] w-fit">
-              <GooglePlayIcon />
-              <div className="flex flex-col text-left">
-                <span className="text-[10px] leading-tight text-white/90 uppercase tracking-tight">Disponível no</span>
-                <span className="text-sm font-bold leading-tight text-white">Google Play</span>
-              </div>
-            </a>
-          </div>
-
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between border-t border-white/5">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-4 md:mb-0 mt-8 md:mt-8">
-            {LEGAL_LINKS.map((item) => (
-              <li key={item.label}>
-                <Link href={item.href} className="text-zinc-400 hover:text-white text-xs transition-colors">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="text-zinc-400 text-xs shrink-0 mt-8 md:mt-8">
-            © 2026 Hitlovers - Todos os direitos reservados.
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between border-t border-brand-beige/10">
+          <p className="text-brand-beige/50 text-sm mt-8 md:mt-0 font-medium">
+            © 2026 Tshirteria - CNPJ: 48.963.137/0001-78
           </p>
         </div>
       </div>
     </footer>
   )
 }
+

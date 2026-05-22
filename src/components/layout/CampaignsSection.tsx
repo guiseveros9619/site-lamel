@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowRight, Music, Ticket, Sparkles } from 'lucide-react'
+import { ArrowRight, Scissors, Trophy, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
 if (typeof window !== 'undefined') {
@@ -16,91 +16,102 @@ export function CampaignsSection() {
 
   useGSAP(
     () => {
-      // Header Animation
-      gsap.from('.anim-camp-header', {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-        }
-      })
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (!prefersReducedMotion) {
+        // Header Animation
+        gsap.fromTo('.anim-camp-header', 
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 80%',
+            }
+          }
+        )
 
-      // Cards Animation
-      gsap.from('.anim-camp-card', {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.anim-camp-card', // Trigger on the cards container area
-          start: 'top 85%',
-        }
-      })
+        // Cards Animation
+        gsap.fromTo('.anim-camp-card', 
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '.anim-camp-card', // Trigger on the cards container area
+              start: 'top 85%',
+            }
+          }
+        )
+      } else {
+         gsap.set(['.anim-camp-header', '.anim-camp-card'], { opacity: 1, y: 0 })
+      }
     },
     { scope: containerRef }
   )
 
   return (
-    <section ref={containerRef} className="bg-[#121212] py-24 overflow-hidden">
+    <section ref={containerRef} className="bg-brand-beige py-24 overflow-hidden border-t border-brand-black/5">
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header Part */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-          <h2 className="anim-camp-header text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight text-balance">
-            Todo mundo ganha com o Hype.
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16 relative z-10">
+          <h2 className="anim-camp-header opacity-0 translate-y-10 text-5xl sm:text-6xl font-heading font-extrabold leading-[1.05] tracking-tight text-brand-black text-balance">
+            Tudo o que você precisa para crescer.
           </h2>
-          <div className="anim-camp-header flex flex-col items-start lg:pt-4">
-            <p className="text-xl text-zinc-300 leading-relaxed font-medium mb-6">
-              Nossa plataforma atende desde a gravadora que precisa emplacar um Top 50, até o fã de carteirinha que só quer acessar o camarim do seu artista favorito.
+          <div className="anim-camp-header opacity-0 translate-y-10 flex flex-col items-start lg:pt-4">
+            <p className="text-xl text-brand-black/70 leading-relaxed font-medium mb-6">
+              Nosso ecossistema foi pensado para apoiar o seu negócio em todas as frentes, desde a personalização dos produtos até o suporte e premiações.
             </p>
           </div>
         </div>
 
         {/* Feature Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 relative z-20">
           
-          {/* Card 1: Gravadoras */}
-          <Link href="/artistas" className="anim-camp-card flex flex-col group cursor-pointer bg-[#1c1c1c] p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple">
-            <div className="w-14 h-14 rounded-2xl bg-brand-purple/10 text-brand-purple flex items-center justify-center mb-8">
-               <Music size={28} aria-hidden="true" />
+          {/* Card 1: Personalização */}
+          <Link href="/personalizacao" className="anim-camp-card opacity-0 translate-y-10 flex flex-col group cursor-pointer bg-white p-8 rounded-[2rem] border-2 border-brand-black shadow-lg hover:-translate-y-2 transition-all duration-300 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green">
+            <div className="w-14 h-14 rounded-2xl bg-brand-green text-brand-black flex items-center justify-center mb-8 shadow-sm">
+               <Scissors size={28} aria-hidden="true" />
             </div>
-            <h3 className="text-3xl font-extrabold mb-4">Artistas & Escritórios</h3>
-            <p className="text-zinc-400 leading-relaxed mb-8 flex-grow font-medium">
-              Faça sua música subir pros charts regionais engajando milhares de criadores que falam a língua do público local, simultaneamente.
+            <h3 className="text-3xl font-heading font-extrabold mb-4 text-brand-black leading-tight">Personalização<br/>Exclusiva</h3>
+            <p className="text-brand-black/70 leading-relaxed mb-8 flex-grow font-medium">
+              Crie a sua própria marca (Private Label) personalizando os produtos com a sua logomarca ou escolhendo nossas peças.
             </p>
-            <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition-transform group-hover:translate-x-2">
+            <div className="w-12 h-12 rounded-full bg-brand-black text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
               <ArrowRight size={24} aria-hidden="true" />
             </div>
           </Link>
 
-          {/* Card 2: Produtores */}
-          <Link href="/eventos" className="anim-camp-card flex flex-col group cursor-pointer bg-[#1c1c1c] p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple">
-            <div className="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-8">
-               <Ticket size={28} aria-hidden="true" />
+          {/* Card 2: TSH Club */}
+          <Link href="/tsh-club" className="anim-camp-card opacity-0 translate-y-10 flex flex-col group cursor-pointer bg-white p-8 rounded-[2rem] border-2 border-brand-black shadow-lg hover:-translate-y-2 transition-all duration-300 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple">
+            <div className="w-14 h-14 rounded-2xl bg-brand-purple text-brand-black flex items-center justify-center mb-8 shadow-sm">
+               <Trophy size={28} aria-hidden="true" />
             </div>
-            <h3 className="text-3xl font-extrabold mb-4">Eventos & Produtores</h3>
-            <p className="text-zinc-400 leading-relaxed mb-8 flex-grow font-medium">
-              Transforme cada festa numa experiência viral. Crie promotores locais em massa distribuindo cortesias e acessos VIP de forma controlada.
+            <h3 className="text-3xl font-heading font-extrabold mb-4 text-brand-black leading-tight">TSH Club<br/>Fidelidade</h3>
+            <p className="text-brand-black/70 leading-relaxed mb-8 flex-grow font-medium">
+              O programa automático onde suas compras viram pontos. Acumule pontos, suba de nível e desbloqueie descontos e benefícios.
             </p>
-            <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition-transform group-hover:translate-x-2">
+            <div className="w-12 h-12 rounded-full bg-brand-black text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
               <ArrowRight size={24} aria-hidden="true" />
             </div>
           </Link>
 
-          {/* Card 3: Creators */}
-          <Link href="/" className="anim-camp-card flex flex-col group cursor-pointer bg-[#1c1c1c] p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-colors text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple">
-            <div className="w-14 h-14 rounded-2xl bg-[#fcd34d]/20 text-[#fcd34d] flex items-center justify-center mb-8">
-               <Sparkles size={28} aria-hidden="true" />
+          {/* Card 3: Mapa */}
+          <Link href="/revendedores" className="anim-camp-card opacity-0 translate-y-10 flex flex-col group cursor-pointer bg-white p-8 rounded-[2rem] border-2 border-brand-black shadow-lg hover:-translate-y-2 transition-all duration-300 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+            <div className="w-14 h-14 rounded-2xl bg-brand-orange text-brand-black flex items-center justify-center mb-8 shadow-sm">
+               <MapPin size={28} aria-hidden="true" />
             </div>
-            <h3 className="text-3xl font-extrabold mb-4">Criadores e Fãs</h3>
-            <p className="text-zinc-400 leading-relaxed mb-8 flex-grow font-medium">
-              Não importa se você tem 500 ou 50k seguidores. Seu engajamento autêntico vale PIX na hora ou experiências inesquecíveis na sua cidade.
+            <h3 className="text-3xl font-heading font-extrabold mb-4 text-brand-black leading-tight">Presença<br/>Nacional</h3>
+            <p className="text-brand-black/70 leading-relaxed mb-8 flex-grow font-medium">
+              Apareça no nosso mapa interativo e seja encontrado por clientes finais da sua região que buscam produtos da Tshirteria.
             </p>
-            <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition-transform group-hover:translate-x-2">
+            <div className="w-12 h-12 rounded-full bg-brand-black text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
               <ArrowRight size={24} aria-hidden="true" />
             </div>
           </Link>

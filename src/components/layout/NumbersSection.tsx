@@ -4,7 +4,6 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Button } from '@/components/ui/button'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP)
@@ -15,45 +14,53 @@ export function NumbersSection() {
 
   useGSAP(
     () => {
-      gsap.from('.anim-up-numbers', {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-        }
-      })
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (!prefersReducedMotion) {
+        gsap.to('.anim-up-numbers', {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+          }
+        })
+      } else {
+        gsap.set('.anim-up-numbers', { opacity: 1, y: 0 })
+      }
     },
     { scope: containerRef }
   )
 
   return (
-    <section ref={containerRef} className="bg-[#121212] py-24 overflow-hidden">
+    <section ref={containerRef} className="bg-brand-black py-24 overflow-hidden border-t border-brand-beige/10">
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           
           {/* Left Column */}
           <div>
-            <p className="anim-up-numbers mb-4 text-sm font-bold tracking-wide text-brand-purple uppercase">
-              O poder do local
+            <p className="anim-up-numbers opacity-0 translate-y-10 mb-4 text-sm font-bold tracking-widest text-brand-yellow uppercase">
+              Oportunidade nacional
             </p>
-            <h2 className="anim-up-numbers text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-              Nascemos no coração da cultura local.
+            <h2 className="anim-up-numbers opacity-0 translate-y-10 text-5xl font-heading font-extrabold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl text-brand-beige text-balance">
+              Presença e alcance em todo o Brasil.
             </h2>
           </div>
 
           {/* Right Column */}
           <div className="flex flex-col justify-end lg:pb-4">
-            <p className="anim-up-numbers mb-8 text-xl leading-relaxed text-zinc-300 font-medium">
-              O segredo da música viral e dos shows lotados começa nas ruas. Transformamos audiências regionais em um exército de <span className="text-white font-bold">criadores engajados</span>, prontos para fazer barulho no seu próximo lançamento ou esgotar a bilheteria da sua festa.
+            <p className="anim-up-numbers opacity-0 translate-y-10 mb-10 text-xl leading-relaxed text-brand-beige/70 font-medium">
+              A Tshirteria envia os pedidos para todo o território brasileiro e atualmente conta com revendedores em <span className="text-brand-yellow font-bold">todos os 27 estados do Brasil</span>. Um mercado gigante à sua espera.
             </p>
-            <div className="anim-up-numbers">
-              <Button className="h-14 rounded-full bg-white px-8 text-base font-bold text-black hover:bg-zinc-200 transition-colors">
-                Conheça nossos cases
-              </Button>
+            <div className="anim-up-numbers opacity-0 translate-y-10">
+              <a
+                href="/revendedores"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-brand-yellow px-8 text-base font-bold text-brand-black hover:bg-brand-yellow/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow shadow-md"
+              >
+                Conheça a rede de revendedores
+              </a>
             </div>
           </div>
 
@@ -62,4 +69,5 @@ export function NumbersSection() {
     </section>
   )
 }
+
 
