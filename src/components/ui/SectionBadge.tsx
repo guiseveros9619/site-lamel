@@ -7,6 +7,7 @@ type SectionBadgeVariant =
   | 'blue'
   | 'purple'
   | 'pink'
+  | 'light-pink'
   | 'dark'
   | 'dark-orange'
   | 'dark-yellow'
@@ -33,6 +34,7 @@ export function SectionBadge({
     blue: 'bg-brand-blue/10 text-brand-blue border-brand-blue/20',
     purple: 'bg-brand-purple/10 text-brand-purple border-brand-purple/20',
     pink: 'bg-brand-pink/10 text-brand-pink border-brand-pink/20',
+    'light-pink': 'bg-brand-pink text-brand-black border-brand-black/10',
     dark: 'bg-brand-black text-brand-orange border-brand-black/10',
     'dark-orange': 'bg-brand-black text-brand-orange border-brand-black/10',
     'dark-yellow': 'bg-brand-black text-brand-yellow border-brand-black/10',

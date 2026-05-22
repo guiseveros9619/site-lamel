@@ -64,11 +64,11 @@ export function VideoInstitucional() {
 
       <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <SectionBadge variant="dark-purple" className="anim-video-text opacity-0 translate-y-10 mb-4">
+          <SectionBadge variant="dark-pink" className="anim-video-text opacity-0 translate-y-10 mb-4">
             Por dentro da marca
           </SectionBadge>
           <h2 className="anim-video-text opacity-0 translate-y-10 text-5xl sm:text-6xl font-heading font-extrabold mb-6 text-brand-beige leading-tight">
-            Somos Tshirteria.
+            Somos Lamell Store.
           </h2>
           <p className="anim-video-text opacity-0 translate-y-10 text-xl text-brand-beige/70 font-medium leading-relaxed">
             Conheça a nossa operação e veja como produzimos as peças premium que chegam até você. Rigor e qualidade em cada etapa.
@@ -88,7 +88,7 @@ export function VideoInstitucional() {
               <div className="absolute inset-0 w-full h-full">
                 <Image 
                   src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-                  alt="Tshirteria Operação"
+                  alt="Lamell Store Operação"
                   fill
                   className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1200px) 100vw, 1200px"
@@ -98,24 +98,21 @@ export function VideoInstitucional() {
               {/* Overlay Escuro para o texto/botão saltar */}
               <div className="absolute inset-0 bg-brand-black/30 group-hover:bg-brand-black/20 transition-colors duration-500" />
               
-              {/* Botão Play Customizado */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-brand-purple text-brand-black rounded-full flex items-center justify-center pl-2 transition-transform duration-300 group-hover:scale-110 shadow-[0_0_40px_rgba(198,182,255,0.6)]">
-                  <Play size={40} className="fill-current" />
-                </div>
+              {/* Botão de Play */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-2xl border-4 border-white transition-all group-hover:scale-110 active:scale-90 group-hover:bg-brand-orange/90">
+                 <Play size={36} fill="currentColor" className="ml-1 text-white" />
               </div>
             </button>
           ) : (
-            /* Iframe super limpo carregado sob demanda */
             <iframe
-              className="absolute inset-0 w-full h-full"
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&color=white`}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+              title="Lamell Store Institucional"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              className="w-full h-full border-none"
             ></iframe>
           )}
-
+          
         </div>
       </div>
     </section>

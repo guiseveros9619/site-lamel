@@ -26,7 +26,7 @@ const STATES = [
 const REAL_RESELLERS = [
   { id: 1, name: "Urban Streetwear Gyn", type: "Loja Física", address: "Av. T-9, 1234 - Setor Bueno", city: "Goiânia", uf: "GO", ig: "@urban.gyn", phone: "5562999999999" },
   { id: 2, name: "Conceito Store Bueno", type: "Física e Online", address: "Rua 44, Galeria Premium - Setor Bueno", city: "Goiânia", uf: "GO", ig: "@conceitostore", phone: "5562988888888" },
-  { id: 3, name: "Tshirteria Oficial (Bueno)", type: "Física e Online", address: "Rua T-36, Setor Bueno", city: "Goiânia", uf: "GO", ig: "@tshirteria", phone: "5562999895357" },
+  { id: 3, name: "Lamell Store Oficial (Bueno)", type: "Física e Online", address: "Rua T-36, Setor Bueno", city: "Goiânia", uf: "GO", ig: "@lamellstore", phone: "5562999895357" },
   
   { id: 4, name: "Metropolis Streetwear", type: "Loja Física", address: "Rua Augusta, 1050 - Consolação", city: "São Paulo", uf: "SP", ig: "@metropolis.sp", phone: "5511999999999" },
   { id: 5, name: "Paulista Concept", type: "Física e Online", address: "Av. Paulista, 2000 - Bela Vista", city: "São Paulo", uf: "SP", ig: "@paulistaconcept", phone: "5511988888888" },
@@ -206,7 +206,7 @@ export function InteractiveMap() {
         {/* Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="anim-header mb-8 flex justify-center">
-            <HeroEyebrow icon={MapPin} variant="light">
+            <HeroEyebrow icon={MapPin} variant="light-green">
               Rede credenciada
             </HeroEyebrow>
           </div>
@@ -214,7 +214,7 @@ export function InteractiveMap() {
             Encontre um revendedor
           </h1>
           <p className="anim-header text-lg sm:text-xl text-brand-black/80 leading-relaxed font-medium max-w-2xl mx-auto">
-            Explore o mapa oficial ou busque por cidade para encontrar os revendedores autorizados da Tshirteria mais próximos.
+            Explore o mapa oficial ou busque por cidade para encontrar os revendedores autorizados da Lamell Store mais próximos.
           </p>
         </div>
 
@@ -459,7 +459,7 @@ export function InteractiveMap() {
                       </div>
 
                       <a 
-                        href={`https://wa.me/${reseller.phone}?text=Olá,%20vi%20sua%20loja%20no%20mapa%20da%20Tshirteria%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos.`}
+                        href={`https://wa.me/${reseller.phone}?text=Olá,%20vi%20sua%20loja%20no%20mapa%20da%20Lamell%20Store%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos.`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-brand-black text-brand-beige font-extrabold hover:bg-brand-orange hover:text-brand-black transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange border border-transparent hover:border-brand-black shadow-md active:scale-95"
@@ -488,10 +488,10 @@ export function InteractiveMap() {
                 </p>
                 
                 <a 
-                  href={`https://wa.me/5562999895357?text=Olá!%20Gostaria%20de%20ser%20o%20primeiro%20revendedor%20autorizado%20da%20Tshirteria%20em%20${encodeURIComponent((selectedCity ? `${selectedCity} - ` : '') + STATES.find(s => s.value === selectedState)?.label)}!`}
+                  href={`https://wa.me/5562999895357?text=Olá!%20Gostaria%20de%20ser%20o%20primeiro%20revendedor%20autorizado%20da%20Lamell%20Store%20em%20${encodeURIComponent((selectedCity ? `${selectedCity} - ` : '') + STATES.find(s => s.value === selectedState)?.label)}!`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 h-16 rounded-full bg-brand-orange text-brand-black font-extrabold text-lg hover:bg-brand-beige transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange relative z-10 shadow-[0_0_30px_rgba(255,138,76,0.3)] active:scale-95"
+                  className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 h-16 rounded-full bg-brand-green text-brand-black font-extrabold text-lg hover:bg-brand-green/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green relative z-10 shadow-[0_0_30px_rgba(255,142,191,0.3)] active:scale-95"
                 >
                   <Store size={24} /> Quero ser o primeiro revendedor
                 </a>

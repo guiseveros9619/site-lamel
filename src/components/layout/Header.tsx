@@ -8,7 +8,6 @@ import { Menu, X } from 'lucide-react'
 const NAV_LINKS = [
   { label: 'Apresentação', href: '/' },
   { label: 'Personalização', href: '/personalizacao' },
-  { label: 'TSH Club', href: '/tsh-club' },
   { label: 'Revendedores', href: '/revendedores' },
 ]
 
@@ -42,11 +41,9 @@ export function Header() {
         <div className="container mx-auto max-w-7xl flex h-20 items-center justify-between px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1 z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-md" onClick={() => setIsMobileMenuOpen(false)}>
-            <img 
-              src="/tshirteria.png" 
-              alt="Tshirteria Logo" 
-              className="h-10 w-auto object-contain" 
-            />
+            <span className="font-cursive text-xl sm:text-7xl tracking-wide text-brand-orange select-none">
+              LaMell
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -60,7 +57,7 @@ export function Header() {
                   aria-current={isActive ? 'page' : undefined}
                   className={`inline-flex items-center justify-center h-10 rounded-full px-5 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange ${
                     isActive
-                      ? 'bg-brand-black text-brand-beige'
+                      ? 'bg-brand-black/5 text-brand-black'
                       : 'text-brand-black hover:bg-brand-black/5'
                   }`}
                 >
@@ -73,10 +70,10 @@ export function Header() {
           {/* CTA Button & Mobile Toggle */}
           <div className="flex items-center gap-2 z-50">
             <a
-              href="https://wa.me/5562999895357?text=Olá%20quero%20me%20tornar%20um%20revendedor%20credenciado%20da%20Tshirteria"
+              href="https://wa.me/5562999895357?text=Olá%20quero%20me%20tornar%20um%20revendedor%20credenciado%20da%20Lamell%20Store"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center justify-center h-11 rounded-full bg-brand-orange px-6 text-sm font-bold text-brand-black hover:bg-brand-orange/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black"
+              className="hidden md:inline-flex items-center justify-center h-11 rounded-full bg-brand-green px-6 text-sm font-bold text-brand-black hover:bg-brand-green/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black"
             >
               Seja um revendedor
             </a>
@@ -123,11 +120,11 @@ export function Header() {
 
             <div className="mt-8 flex flex-col gap-3">
               <a
-                href="https://wa.me/5562999895357?text=Olá%20quero%20me%20tornar%20um%20revendedor%20credenciado%20da%20Tshirteria"
+                href="https://wa.me/5562999895357?text=Olá%20quero%20me%20tornar%20um%20revendedor%20credenciado%20da%20Lamell%20Store"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex items-center justify-center w-full h-14 rounded-full bg-brand-orange font-bold text-lg text-brand-black hover:bg-brand-orange/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black"
+                className="inline-flex items-center justify-center w-full h-14 rounded-full bg-brand-green font-bold text-lg text-brand-black hover:bg-brand-green/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black"
               >
                 Seja um revendedor
               </a>

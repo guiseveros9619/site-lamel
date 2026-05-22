@@ -3,7 +3,6 @@
 import React from 'react'
 import Image from 'next/image'
 import { SectionBadge } from '@/components/ui/SectionBadge'
-import { SmileySticker, StayBoldSticker } from '@/components/ui/BrandElements'
 
 // Row 1: Leftward moving looks with technical specs for resellers and brand owners
 const ROW1_IMAGES = [
@@ -73,12 +72,12 @@ export function LookbookCarousel() {
 
       {/* Decorative background grid pattern */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
           backgroundSize: '30px 30px',
           backgroundImage: `
-            linear-gradient(to right, #F2EDE2 1px, transparent 1px),
-            linear-gradient(to bottom, #F2EDE2 1px, transparent 1px)
+            linear-gradient(to right, #ffe6f1 1px, transparent 1px),
+            linear-gradient(to bottom, #ffe6f1 1px, transparent 1px)
           `
         }}
       />
@@ -89,17 +88,6 @@ export function LookbookCarousel() {
 
       <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 mb-16">
         <div className="text-center max-w-3xl mx-auto relative">
-          
-          {/* Smiley sticker floating organically on the top-left of the title */}
-          <div className="absolute -top-14 -left-16 hidden lg:block -rotate-[15deg] pointer-events-none opacity-90 select-none">
-            <SmileySticker className="w-20 h-20" />
-          </div>
-
-          {/* Stay Bold sticker floating organically on the bottom-right of the title */}
-          <div className="absolute -bottom-8 -right-16 hidden lg:block rotate-[12deg] pointer-events-none opacity-90 select-none">
-            <StayBoldSticker className="w-24 h-20" color="pink" />
-          </div>
-
           {/* Standard Section Badge matching all other homepage sections (no icon) */}
           <SectionBadge variant="dark-pink" className="mb-4">
             Qualidade Real

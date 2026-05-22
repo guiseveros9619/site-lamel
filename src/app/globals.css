@@ -3,6 +3,14 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@font-face {
+  font-family: 'Retro';
+  src: url('/retro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -11,14 +19,15 @@
   --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --font-heading: var(--font-made-tommy), ui-sans-serif, system-ui, sans-serif;
-  --color-brand-black: #111111;
-  --color-brand-beige: #F2EDE2;
-  --color-brand-orange: #FFBA4C;
-  --color-brand-pink: #FF9EC6;
-  --color-brand-yellow: #FFD34D;
-  --color-brand-green: #7BC47F;
-  --color-brand-blue: #7FA7FF;
-  --color-brand-purple: #C6B6FF;
+  --font-cursive: 'Retro', 'Dancing Script', cursive;
+  --color-brand-black: #1D0212;
+  --color-brand-beige: #FFF5F9;
+  --color-brand-orange: #d50084;
+  --color-brand-pink: #ffe6f1;
+  --color-brand-yellow: #FFC0D9;
+  --color-brand-green: #FF8EBF;
+  --color-brand-blue: #F472B6;
+  --color-brand-purple: #E879F9;
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -32,20 +41,20 @@
 }
 
 :root {
-  --background: #F2EDE2;
-  --foreground: #111111;
-  --border: oklch(0 0 0 / 10%);
-  --input: oklch(0 0 0 / 15%);
-  --ring: #FF8A4C;
+  --background: #FFF5F9;
+  --foreground: #1D0212;
+  --border: oklch(0 0 0 / 8%);
+  --input: oklch(0 0 0 / 10%);
+  --ring: #d50084;
   --radius: 0.625rem;
 }
 
 .dark {
-  --background: #111111;
-  --foreground: #F2EDE2;
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: #FF8A4C;
+  --background: #1D0212;
+  --foreground: #FFF5F9;
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: #d50084;
 }
 
 @layer base {

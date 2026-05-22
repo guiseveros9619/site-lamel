@@ -1,19 +1,19 @@
-'use client'
+"use client"
 
-import { useRef } from 'react'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { ArrowRight, Star } from 'lucide-react'
-import { HeroEyebrow } from '@/components/ui/HeroEyebrow'
-import { Quatrefoil, StayBoldSticker } from '@/components/ui/BrandElements'
+import { useRef } from "react"
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { ArrowRight, Star } from "lucide-react"
+import { HeroEyebrow } from "@/components/ui/HeroEyebrow"
+import { Quatrefoil } from "@/components/ui/BrandElements"
 
 gsap.registerPlugin(useGSAP)
 
 // Cúpula esquerda mais alta (pico y=30), direita mais baixa (pico y=90); base reta sem arredondamento.
 const DOUBLE_ARCH_PATH =
-  'M 0,700 L 600,700 L 600,260 ' +
-  'C 600,160 540,90 460,90 C 380,90 320,160 320,260 ' +
-  'C 320,160 260,30 170,30 C 80,30 0,120 0,260 Z'
+  "M 0,700 L 600,700 L 600,260 " +
+  "C 600,160 540,90 460,90 C 380,90 320,160 320,260 " +
+  "C 320,160 260,30 170,30 C 80,30 0,120 0,260 Z"
 
 function ArchCard({ clipId }: { clipId: string }) {
   return (
@@ -21,7 +21,7 @@ function ArchCard({ clipId }: { clipId: string }) {
       viewBox="0 0 600 700"
       className="w-full h-full"
       role="img"
-      aria-label="Camisetas premium Tshirteria"
+      aria-label="Camisetas premium Lamell Store"
       preserveAspectRatio="xMidYMid meet"
     >
       <defs>
@@ -36,7 +36,7 @@ function ArchCard({ clipId }: { clipId: string }) {
         x="0"
         y="0"
         preserveAspectRatio="xMidYMid slice"
-        clipPath={`url(#${clipId})`}
+        clipPath={"url(#" + clipId + ")"}
       />
     </svg>
   )
@@ -47,34 +47,34 @@ export function Hero() {
 
   useGSAP(
     () => {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
       if (!prefersReducedMotion) {
-        gsap.from('.hero-text', {
+        gsap.from(".hero-text", {
           y: 40,
           opacity: 0,
           duration: 1,
           stagger: 0.15,
-          ease: 'power3.out',
+          ease: "power3.out",
         })
 
-        gsap.to('.floating-card', {
-          y: '-=15',
+        gsap.to(".floating-card", {
+          y: "-=15",
           duration: 3,
           yoyo: true,
           repeat: -1,
-          ease: 'sine.inOut',
+          ease: "sine.inOut",
           stagger: {
             amount: 1.5,
-            from: 'random',
+            from: "random",
           },
         })
 
-        gsap.to('.rotating-badge', {
+        gsap.to(".rotating-badge", {
           rotation: 360,
           duration: 10,
           repeat: -1,
-          ease: 'linear',
+          ease: "linear",
         })
       }
     },
@@ -84,19 +84,19 @@ export function Hero() {
   return (
     <section
       ref={container}
-      className="relative min-h-[90vh] overflow-hidden bg-brand-beige flex flex-col justify-center py-20 lg:py-0"
+      className="relative min-h-[90vh] overflow-hidden bg-brand-beige flex flex-col justify-center pt-20 pb-0 lg:py-0"
     >
       {/* Texto: dentro do container */}
       <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">
         <div className="flex flex-col justify-center max-w-2xl lg:max-w-[52%] py-12 lg:py-32 relative">
           <div className="hero-text mb-6">
             <div className="mb-8">
-              <HeroEyebrow icon={Star} variant="light-pink">
-                Personalize, crie e revenda!
+              <HeroEyebrow icon={Star} variant="light-green">
+              MODA QUE ACOMPANHA SUA ROTINA! 
               </HeroEyebrow>
             </div>
             <h1 className="text-5xl font-heading font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-[5rem] text-brand-black text-balance">
-              Seja um revendedor credenciado Tshirteria.
+              Seja um revendedor credenciado Lamell Store.
             </h1>
           </div>
 
@@ -106,20 +106,20 @@ export function Hero() {
 
           <div className="hero-text flex flex-col gap-4 relative z-10 sm:flex-row sm:flex-wrap sm:items-center">
             <a
-              href="https://wa.me/5562999895357?text=Olá%20quero%20me%20tornar%20um%20revendedor%20credenciado%20da%20Tshirteria"
+              href="https://wa.me/5562999895357?text=Olá%20quero%20me%20tornar%20um%20revendedor%20credenciado%20da%20Lamell%20Store"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-brand-pink px-8 text-base font-bold text-brand-black hover:bg-brand-pink/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black shadow-md"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-brand-green px-8 text-base font-bold text-brand-black hover:bg-brand-green/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black shadow-md cursor-pointer"
             >
               Solicitar aprovação
               <ArrowRight size={18} aria-hidden="true" />
             </a>
 
             <a
-              href="https://www.tshirteria.com/accounts/register/"
+              href="https://wa.me/5562999895357?text=Olá%20quero%20criar%20uma%20conta%20de%20revenda%20na%20Lamell%20Store"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-14 items-center justify-center rounded-full border-2 border-brand-black bg-transparent px-8 text-base font-bold text-brand-black hover:bg-brand-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black"
+              className="inline-flex h-14 items-center justify-center rounded-full border-2 border-brand-black bg-transparent px-8 text-base font-bold text-brand-black hover:bg-brand-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black cursor-pointer"
             >
               Criar conta
             </a>
@@ -137,10 +137,6 @@ export function Hero() {
           <div className="floating-card absolute left-[-5%] top-[48%] z-20 w-14 h-14 hover:rotate-12 transition-transform duration-300">
             <Quatrefoil className="w-full h-full fill-brand-orange" />
           </div>
-
-          <div className="floating-card absolute left-[-4%] bottom-[8%] z-20 w-24 h-20">
-            <StayBoldSticker className="w-full h-full" color="green" />
-          </div>
         </div>
       </div>
 
@@ -152,10 +148,6 @@ export function Hero() {
 
         <div className="floating-card absolute left-[-5%] top-[36%] z-20 w-16 h-16 xl:w-20 xl:h-20 hover:rotate-12 transition-transform duration-300">
           <Quatrefoil className="w-full h-full fill-brand-orange" />
-        </div>
-
-        <div className="floating-card absolute left-[-4%] bottom-[8%] z-20 w-28 h-24 xl:w-32 xl:h-28">
-          <StayBoldSticker className="w-full h-full" color="green" />
         </div>
       </div>
     </section>

@@ -72,7 +72,7 @@ export function CampaignsSection() {
         </div>
 
         {/* Feature Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6 relative z-20">
+        <div className="grid md:grid-cols-2 gap-6 relative z-20">
           
           {/* Card 1: Personalização */}
           <Link href="/personalizacao" className="anim-camp-card opacity-0 translate-y-10 flex flex-col group cursor-pointer bg-white p-8 rounded-[2rem] border-2 border-brand-black shadow-lg hover:-translate-y-2 transition-all duration-300 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green">
@@ -88,28 +88,14 @@ export function CampaignsSection() {
             </div>
           </Link>
 
-          {/* Card 2: TSH Club */}
-          <Link href="/tsh-club" className="anim-camp-card opacity-0 translate-y-10 flex flex-col group cursor-pointer bg-white p-8 rounded-[2rem] border-2 border-brand-black shadow-lg hover:-translate-y-2 transition-all duration-300 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple">
-            <div className="w-14 h-14 rounded-2xl bg-brand-purple text-brand-black flex items-center justify-center mb-8 shadow-sm">
-               <Trophy size={28} aria-hidden="true" />
-            </div>
-            <h3 className="text-3xl font-heading font-extrabold mb-4 text-brand-black leading-tight">TSH Club<br/>Fidelidade</h3>
-            <p className="text-brand-black/70 leading-relaxed mb-8 flex-grow font-medium">
-              O programa automático onde suas compras viram pontos. Acumule pontos, suba de nível e desbloqueie descontos e benefícios.
-            </p>
-            <div className="w-12 h-12 rounded-full bg-brand-black text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
-              <ArrowRight size={24} aria-hidden="true" />
-            </div>
-          </Link>
-
           {/* Card 3: Mapa */}
           <Link href="/revendedores" className="anim-camp-card opacity-0 translate-y-10 flex flex-col group cursor-pointer bg-white p-8 rounded-[2rem] border-2 border-brand-black shadow-lg hover:-translate-y-2 transition-all duration-300 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
-            <div className="w-14 h-14 rounded-2xl bg-brand-orange text-brand-black flex items-center justify-center mb-8 shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-brand-green text-brand-black flex items-center justify-center mb-8 shadow-sm">
                <MapPin size={28} aria-hidden="true" />
             </div>
             <h3 className="text-3xl font-heading font-extrabold mb-4 text-brand-black leading-tight">Presença<br/>Nacional</h3>
             <p className="text-brand-black/70 leading-relaxed mb-8 flex-grow font-medium">
-              Apareça no nosso mapa interativo e seja encontrado por clientes finais da sua região que buscam produtos da Tshirteria.
+              Apareça no nosso mapa interativo e seja encontrado por clientes finais da sua região que buscam produtos da Lamell Store.
             </p>
             <div className="w-12 h-12 rounded-full bg-brand-black text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
               <ArrowRight size={24} aria-hidden="true" />

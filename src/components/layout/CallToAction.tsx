@@ -22,7 +22,7 @@ interface CallToActionProps {
 export function CallToAction({ title, description, buttonText, buttonLink = "#" }: CallToActionProps) {
   const container = useRef<HTMLDivElement>(null)
 
-  const activeColorClass = 'bg-brand-orange hover:bg-brand-orange/90 focus-visible:ring-brand-orange'
+  const activeColorClass = 'bg-brand-green hover:bg-brand-green/90 focus-visible:ring-brand-green'
 
   useGSAP(
     () => {

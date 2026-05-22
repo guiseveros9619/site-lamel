@@ -56,14 +56,14 @@ const PRESET_PRINTS = [
     )
   },
   {
-    id: 'tshirteria',
-    name: 'TSH Mono',
+    id: 'lamell',
+    name: 'LML Mono',
     element: (
       <svg viewBox="0 0 100 100" className="w-full h-full fill-current" aria-hidden="true">
         {/* círculo selo */}
         <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" strokeWidth="3" />
-        {/* T monograma */}
-        <path d="M 30,38 L 70,38 M 50,38 L 50,68" stroke="currentColor" strokeWidth="6" strokeLinecap="round" fill="none" />
+        {/* L monograma */}
+        <path d="M 40,32 L 40,68 L 65,68" stroke="currentColor" strokeWidth="6" strokeLinecap="round" fill="none" />
         {/* dois pontos decorativos */}
         <circle cx="36" cy="74" r="1.8" />
         <circle cx="64" cy="74" r="1.8" />
@@ -135,78 +135,19 @@ function ShirtVector({ color, scale = 1 }: { color: string; scale?: number }) {
   )
 }
 
-// Modelos do carrossel do Step 1 — 4 peças do catálogo
+// Modelos do carrossel do Step 1 — 4 peças do catálogo com fotos reais
 const PRODUCT_MODELS = [
-  { id: 'oversized', name: 'Camiseta Oversized' },
-  { id: 'baby', name: 'Baby Look' },
-  { id: 'tank', name: 'Regata' },
-  { id: 'hoodie', name: 'Moletom' },
+  { id: "oversized", name: "Camiseta Oversized", image: "/4.jpg" },
+  { id: "baby", name: "Baby Look", image: "/14.jpg" },
+  { id: "tank", name: "Regata", image: "/22.jpg" },
+  { id: "hoodie", name: "Moletom", image: "/3.jpg" },
 ] as const
 
-function ProductModelIcon({ variant }: { variant: (typeof PRODUCT_MODELS)[number]['id'] }) {
-  const common = {
-    fill: '#F2EDE2',
-    stroke: '#111111',
-    strokeWidth: 4,
-    strokeLinejoin: 'round' as const,
-    strokeLinecap: 'round' as const,
-  }
-  // Oversized usa o mesmo desenho do customizer (ShirtVector) — viewBox 0 0 200 220
-  if (variant === 'oversized') {
-    return (
-      <svg viewBox="0 0 200 220" className="w-full h-full drop-shadow-md transition-opacity duration-300" aria-hidden="true">
-        <path
-          d="M 80,24 C 88,38 112,38 120,24 L 138,32 L 178,52 L 168,82 L 148,76 L 148,196 L 52,196 L 52,76 L 32,82 L 22,52 L 62,32 Z"
-          {...common}
-        />
-        <path d="M 80,24 C 88,38 112,38 120,24" fill="none" stroke="#111111" strokeWidth="2.5" strokeLinecap="round" />
-      </svg>
-    )
-  }
-  return (
-    <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-md transition-opacity duration-300" aria-hidden="true">
-      {variant === 'baby' && (
-        <>
-          <path
-            d="M 78,32 C 86,44 114,44 122,32 L 138,40 L 162,58 L 152,74 L 142,68 L 146,170 C 146,176 142,180 136,180 L 64,180 C 58,180 54,176 54,170 L 58,68 L 48,74 L 38,58 L 62,40 Z"
-            {...common}
-          />
-          <path d="M 78,32 C 86,44 114,44 122,32" fill="none" stroke="#111111" strokeWidth="2.5" strokeLinecap="round" />
-        </>
-      )}
-      {variant === 'tank' && (
-        <>
-          <path
-            d="M 72,28 C 78,52 122,52 128,28 L 152,42 L 152,178 L 48,178 L 48,42 Z"
-            {...common}
-          />
-          <path d="M 72,28 C 78,52 122,52 128,28" fill="none" stroke="#111111" strokeWidth="2.5" strokeLinecap="round" />
-        </>
-      )}
-      {variant === 'hoodie' && (
-        <>
-          <path
-            d="M 62,40 C 70,18 130,18 138,40 L 158,50 L 184,72 L 172,90 L 158,80 L 158,180 L 42,180 L 42,80 L 28,90 L 16,72 L 42,50 Z"
-            {...common}
-          />
-          {/* abertura do capuz */}
-          <path d="M 78,40 C 86,58 114,58 122,40" fill="rgba(0,0,0,0.1)" stroke="#111111" strokeWidth="2.5" />
-          {/* cordão */}
-          <line x1="94" y1="56" x2="94" y2="74" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
-          <line x1="106" y1="56" x2="106" y2="74" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
-          {/* bolso canguru */}
-          <path d="M 70,120 L 130,120 L 130,150 L 70,150 Z" fill="none" stroke="#111111" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
-        </>
-      )}
-    </svg>
-  )
-}
-
 const STEPS = [
-  { id: 'briefing', label: '1. Escolha o Modelo Base' },
-  { id: 'design', label: '2. Desenvolvimento da Arte' },
-  { id: 'approval', label: '3. Validação do Projeto' },
-  { id: 'delivery', label: '4. Estamparia e Envio' },
+  { id: "briefing", label: "1. Escolha o Modelo Base" },
+  { id: "design", label: "2. Desenvolvimento da Arte" },
+  { id: "approval", label: "3. Validação do Projeto" },
+  { id: "delivery", label: "4. Estamparia e Envio" },
 ]
 
 export function PersonalizacaoSteps() {
@@ -491,9 +432,13 @@ export function PersonalizacaoSteps() {
 
               <div className="flex flex-col items-center gap-6 relative z-10 select-none pointer-events-none">
                  {/* Ilustração da peça atual */}
-                 <div className="step1-product-display w-44 h-44 sm:w-48 sm:h-48 flex items-center justify-center">
-                    <ProductModelIcon variant={PRODUCT_MODELS[productIdx].id} />
-                 </div>
+                 <div className="step1-product-display w-44 h-44 sm:w-48 sm:h-48 flex items-center justify-center rounded-2xl overflow-hidden border-2 border-brand-black shadow-md bg-brand-beige">
+                     <img 
+                       src={PRODUCT_MODELS[productIdx].image} 
+                       alt={PRODUCT_MODELS[productIdx].name} 
+                       className="w-full h-full object-cover transition-opacity duration-300" 
+                     />
+                  </div>
 
                  {/* Nome da peça */}
                  <div className="step1-product-name text-lg sm:text-xl font-heading font-black uppercase tracking-wide text-brand-black text-center min-h-[1.6em]">

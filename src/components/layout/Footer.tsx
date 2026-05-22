@@ -28,45 +28,42 @@ const LINK_COLUMNS = [
   {
     title: 'Links úteis',
     links: [
-      { label: 'E-commerce', href: 'https://www.tshirteria.com/' },
-      { label: 'Produtos', href: 'https://www.tshirteria.com/products/' },
-      { label: 'Privacidade', href: 'https://www.tshirteria.com/politica_privacidade/' },
+      { label: 'E-commerce', href: '#' },
+      { label: 'Produtos', href: '#' },
+      { label: 'Privacidade', href: '#' },
     ],
   },
   {
     title: 'Serviços',
     links: [
       { label: 'Personalização', href: '/personalizacao' },
-      { label: 'TSH Club', href: '/tsh-club' },
       { label: 'Revendedores', href: '/revendedores' },
     ],
   },
 ]
 
 const SOCIAL_LINKS = [
-  { label: 'Instagram', handle: '@tshirteria', href: 'https://instagram.com/tshirteria', Icon: InstagramLogo },
-  { label: 'Telegram', handle: '@tshirteria', href: 'https://t.me/joinchat/AAAAAEVr8sIjhHa5b8zmwA', Icon: TelegramLogo },
-  { label: 'TikTok', handle: '@tshirteria', href: 'https://tiktok.com/@tshirteria', Icon: TikTokLogo },
-  { label: 'YouTube', handle: '@tshirteria', href: 'https://youtube.com/@tshirteria', Icon: YouTubeLogo },
+  { label: 'Instagram', handle: '@lamellstore', href: 'https://instagram.com/lamellstore', Icon: InstagramLogo },
+  { label: 'Telegram', handle: '@lamellstore', href: '#', Icon: TelegramLogo },
+  { label: 'TikTok', handle: '@lamellstore', href: '#', Icon: TikTokLogo },
+  { label: 'YouTube', handle: '@lamellstore', href: '#', Icon: YouTubeLogo },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-brand-black pt-20 pb-10 border-t border-brand-beige/10 text-brand-beige">
+    <footer className="bg-brand-pink pt-20 pb-10 border-t border-brand-black/10 text-brand-black">
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
 
           {/* Brand & Slogan */}
           <div className="lg:col-span-1 flex flex-col items-start gap-4">
             <Link href="/" className="flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-md">
-              <img 
-                src="/tshirteria-white.png" 
-                alt="Tshirteria Logo" 
-                className="h-10 w-auto object-contain" 
-              />
+              <span className="font-cursive text-4xl sm:text-5xl tracking-wide text-brand-orange select-none">
+                LaMell
+              </span>
             </Link>
-            <p className="text-sm font-medium text-brand-beige/70">
-            Personalize, crie e revenda!
+            <p className="text-sm font-medium text-brand-black/70">
+            Moda que acompanha sua rotina!
             </p>
           </div>
 
@@ -76,7 +73,7 @@ export function Footer() {
               <ul className="flex flex-col gap-4">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="text-brand-beige/70 hover:text-brand-orange font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm">
+                    <Link href={link.href} className="text-brand-black/70 hover:text-brand-orange font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm">
                       {link.label}
                     </Link>
                   </li>
@@ -88,10 +85,10 @@ export function Footer() {
           {/* Contact / Atendimento */}
           <div className="lg:col-span-1">
             <h4 className="font-heading font-bold mb-6 text-xl">Atendimento</h4>
-            <div className="flex flex-col gap-4 text-brand-beige/70 font-medium">
+            <div className="flex flex-col gap-4 text-brand-black/70 font-medium">
               <p>Seg. à Sex. 8h às 18h</p>
               <p>(62) 9 9989-5357</p>
-              <p>sac.tshirteria@gmail.com</p>
+              <p>sac.lamell@gmail.com</p>
             </div>
             
             <ul className="flex flex-row gap-3 mt-8">
@@ -102,7 +99,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${label} ${handle}`}
-                    className="w-10 h-10 rounded-full border border-brand-beige/20 flex items-center justify-center text-brand-beige/70 hover:text-brand-black hover:bg-brand-orange hover:border-brand-orange transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
+                    className="w-10 h-10 rounded-full border border-brand-black/20 flex items-center justify-center text-brand-black/70 hover:text-brand-black hover:bg-brand-orange hover:border-brand-orange transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
                   >
                     <Icon />
                   </a>
@@ -114,9 +111,9 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between border-t border-brand-beige/10">
-          <p className="text-brand-beige/50 text-sm mt-8 md:mt-0 font-medium">
-            © 2026 Tshirteria - CNPJ: 48.963.137/0001-78
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between border-t border-brand-black/10">
+          <p className="text-brand-black/50 text-sm mt-8 md:mt-0 font-medium">
+            © 2026 Lamell Store - CNPJ: 48.963.137/0001-78
           </p>
         </div>
       </div>

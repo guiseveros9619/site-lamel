@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Sua marca, suas regras. Personalize qualquer produto da nossa linha de produção com a sua identidade, logo ou estampas exclusivas.',
   alternates: { canonical: '/personalizacao' },
   openGraph: {
-    title: 'Personalização & Private Label | Tshirteria',
+    title: 'Personalização & Private Label | Lamell Store',
     url: '/personalizacao',
   },
 }
@@ -32,17 +32,14 @@ export default function PersonalizacaoPage() {
         imageAlt="Modelo vestindo camiseta personalizada cherry streetwear"
         isImageLeft={true}
         stickers={{
-          goodDays: true,
           greenFlower: true,
-          sparkle: 'green',
-          globe: true
         }}
       />
 
       <FAQPersonalizacao />
       <CallToAction 
         title="Vamos criar sua própria marca?"
-        description="Dê vida às suas ideias com a qualidade Premium da Tshirteria. Produzimos e estampamos com a sua identidade para você focar no que importa: vender."
+        description="Dê vida às suas ideias com a qualidade Premium da Lamell Store. Produzimos e estampamos com a sua identidade para você focar no que importa: vender."
         buttonText="Fazer orçamento"
         color="pink"
       />

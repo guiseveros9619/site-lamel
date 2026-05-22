@@ -242,9 +242,11 @@ export function BrandPromoSection({
               )}
 
               {/* Subtle sparkle ornament */}
-              <div className="promo-sticker float-3 absolute bottom-12 right-[-20px] lg:right-[-30px] z-20">
-                <SparkleElement className="w-10 h-10 fill-brand-orange" />
-              </div>
+              {stickers.sparkle && (
+                <div className="promo-sticker float-3 absolute bottom-12 right-[-20px] lg:right-[-30px] z-20">
+                  <SparkleElement className={`w-10 h-10 ${getSparkleClass()}`} />
+                </div>
+              )}
 
            </div>
 
