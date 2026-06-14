@@ -4,8 +4,7 @@ import { useRef } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { ArrowRight, Shirt, Sparkles } from 'lucide-react'
-import { HeroEyebrow } from '@/components/ui/HeroEyebrow'
+import { ArrowRight, Sparkles } from 'lucide-react'
 
 gsap.registerPlugin(useGSAP)
 
@@ -64,12 +63,6 @@ export function HeroPersonalizacao() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Coluna esquerda — texto */}
           <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
-            <div className="anim-hero-text mb-8 inline-flex">
-              <HeroEyebrow icon={Shirt} variant="light-green">
-                Personalização de Camisetas
-              </HeroEyebrow>
-            </div>
-
             <h1 className="anim-hero-text text-5xl sm:text-6xl lg:text-[4.5rem] font-heading font-extrabold leading-[1.05] tracking-tight mb-8 text-brand-black text-balance">
               Personalização<br/>de Camisetas
             </h1>
