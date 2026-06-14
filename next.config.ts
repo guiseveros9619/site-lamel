@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: '/', destination: '/personalizacao', permanent: false },
       { source: '/anunciantes/artistas', destination: '/artistas', permanent: true },
       { source: '/anunciantes/eventos', destination: '/eventos', permanent: true },
     ]
