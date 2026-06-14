@@ -151,22 +151,22 @@ export function BrandPromoSection({
   }
 
   return (
-    <section ref={containerRef} className="bg-black py-32 overflow-hidden relative">
+    <section ref={containerRef} className="bg-brand-pink py-32 overflow-hidden relative">
       <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
            
            {/* Column: Text */}
            <div className={`flex flex-col items-start max-w-xl mx-auto lg:mx-0 relative ${isImageLeft ? 'order-1 lg:order-2 lg:pl-12' : 'order-1'}`}>
-             <p className="section-text text-sm font-bold tracking-wide text-zinc-400 mb-6 uppercase">
+             <p className="section-text text-sm font-bold tracking-wide text-brand-orange mb-6 uppercase">
                {tag}
              </p>
-             <h2 className="section-text text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-8 leading-[1.1] relative">
+             <h2 className="section-text text-5xl sm:text-6xl font-heading font-extrabold tracking-tight text-brand-black mb-8 leading-[1.1] relative">
                {title}
                {stickers.sparkle && (
                  <SparkleElement className={`absolute -top-10 -right-4 w-8 h-8 hidden sm:block opacity-70 ${getSparkleClass()}`} />
                )}
              </h2>
-             <p className="section-text text-lg text-zinc-300 font-medium mb-10 leading-relaxed">
+             <p className="section-text text-lg text-brand-black/75 font-medium mb-10 leading-relaxed">
                {description}
              </p>
              {buttonText && (

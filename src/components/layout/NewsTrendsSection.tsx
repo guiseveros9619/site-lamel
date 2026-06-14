@@ -132,7 +132,7 @@ export function NewsTrendsSection() {
                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-zinc-800 rounded-b-2xl z-20"></div>
                    
                    {/* Tela do App */}
-                   <div className="flex-1 bg-black w-full pt-10 px-4">
+                   <div className="flex-1 bg-brand-pink w-full pt-10 px-4">
                       {/* Header App */}
                       <div className="flex justify-between items-center mb-6">
                          <div className="w-8 h-8 rounded-full bg-zinc-800 border border-white/10"></div>

@@ -24,7 +24,7 @@ export default function RevendedoresPage() {
         title="Margens incríveis e alto giro."
         description="Adquira nossas coleções a pronta entrega com descontos de atacado imbatíveis. Nosso design streetwear autêntico garante que as peças tenham alto apelo comercial e saiam da prateleira no mesmo dia."
         buttonText="Seja um revendedor"
-        buttonLink="https://wa.me/5562999895357?text=Olá,%20gostaria%20de%20me%20tornar%20um%20revendedor%20credenciado."
+        buttonLink="https://api.whatsapp.com/send/?phone=5562999895357&text=Ol%C3%A1%2C+gostaria+de+me+tornar+um+revendedor+credenciado.&type=phone_number&app_absent=0"
         imagePath="/4.jpg"
         imageAlt="Casal usando camisetas streetwear premium na cor verde militar"
         isImageLeft={false}

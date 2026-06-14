@@ -84,7 +84,7 @@ export function Hero() {
   return (
     <section
       ref={container}
-      className="relative min-h-[90vh] overflow-hidden bg-brand-beige flex flex-col justify-center pt-20 pb-0 lg:py-0"
+      className="relative lg:min-h-[90vh] overflow-hidden bg-brand-beige flex flex-col justify-center pt-20 pb-0 lg:py-0"
     >
       {/* Texto: dentro do container */}
       <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">
@@ -96,7 +96,7 @@ export function Hero() {
               </HeroEyebrow>
             </div>
             <h1 className="text-5xl font-heading font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-[5rem] text-brand-black text-balance">
-              Seja um revendedor credenciado Lamell Store.
+              Personalize a sua estampa, crie coleções e projetos exclusivos.
             </h1>
           </div>
 
@@ -106,7 +106,7 @@ export function Hero() {
 
           <div className="hero-text flex flex-col gap-4 relative z-10 sm:flex-row sm:flex-wrap sm:items-center">
             <a
-              href="https://wa.me/5562999895357?text=Olá%20quero%20me%20tornar%20um%20revendedor%20credenciado%20da%20Lamell%20Store"
+              href="https://api.whatsapp.com/send/?phone=5562999895357&text=Ol%C3%A1+quero+me+tornar+um+revendedor+credenciado+da+Lamell+Store&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-brand-green px-8 text-base font-bold text-brand-black hover:bg-brand-green/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black shadow-md cursor-pointer"
@@ -116,7 +116,7 @@ export function Hero() {
             </a>
 
             <a
-              href="https://wa.me/5562999895357?text=Olá%20quero%20criar%20uma%20conta%20de%20revenda%20na%20Lamell%20Store"
+              href="https://api.whatsapp.com/send/?phone=5562999895357&text=Ol%C3%A1+quero+criar+uma+conta+de+revenda+na+Lamell+Store&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-14 items-center justify-center rounded-full border-2 border-brand-black bg-transparent px-8 text-base font-bold text-brand-black hover:bg-brand-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black cursor-pointer"
@@ -128,13 +128,13 @@ export function Hero() {
       </div>
 
       {/* Visual mobile/tablet: dentro do fluxo, abaixo do texto */}
-      <div className="lg:hidden mt-8 w-full px-6">
-        <div className="relative max-w-[400px] mx-auto aspect-[6/7] pointer-events-auto">
+      <div className="lg:hidden mt-8 w-full">
+        <div className="relative w-full aspect-[6/7] pointer-events-auto">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-brand-blue/20 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] blur-3xl -z-10" />
 
           <ArchCard clipId="double-arch-clip-mobile" />
 
-          <div className="floating-card absolute left-[-5%] top-[48%] z-20 w-14 h-14 hover:rotate-12 transition-transform duration-300">
+          <div className="floating-card absolute left-3 top-[48%] z-20 w-14 h-14 hover:rotate-12 transition-transform duration-300">
             <Quatrefoil className="w-full h-full fill-brand-orange" />
           </div>
         </div>

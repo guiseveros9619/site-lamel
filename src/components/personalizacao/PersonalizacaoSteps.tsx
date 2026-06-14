@@ -144,10 +144,10 @@ const PRODUCT_MODELS = [
 ] as const
 
 const STEPS = [
-  { id: "briefing", label: "1. Escolha o Modelo Base" },
-  { id: "design", label: "2. Desenvolvimento da Arte" },
-  { id: "approval", label: "3. Validação do Projeto" },
-  { id: "delivery", label: "4. Estamparia e Envio" },
+  { id: "briefing", label: "Passo 1 – Envio da Arte" },
+  { id: "design", label: "Passo 2 – Escolha das Peças" },
+  { id: "approval", label: "Passo 3 – Aprovação & Produção" },
+  { id: "delivery", label: "Pronto em 5 dias" },
 ]
 
 export function PersonalizacaoSteps() {
@@ -366,7 +366,7 @@ export function PersonalizacaoSteps() {
           .to('.step4-box', { x: 0, opacity: 1, duration: 0.6, ease: 'power2.out' })
           .to('.step4-truck', { x: 0, opacity: 1, duration: 0.6, ease: 'power2.out' }, '-=0.4')
           
-          .to('.step4-days', { innerHTML: '6', duration: 1, ease: 'power1.inOut', snap: 'innerHTML' })
+          .to('.step4-days', { innerHTML: '5', duration: 1, ease: 'power1.inOut', snap: 'innerHTML' })
           .to('.step4-days', { color: '#FF8A4C', scale: 1.1, duration: 0.3, yoyo: true, repeat: 1 })
           
           .to({}, { duration: 1.5 })
@@ -419,12 +419,12 @@ export function PersonalizacaoSteps() {
         <div className="step-card flex flex-col lg:flex-row items-center min-h-[70vh] border-b border-brand-black/10 pb-24 lg:pb-0">
            <div className="flex-1 lg:pr-16 mb-12 lg:mb-0">
                <div className="w-12 h-12 rounded-2xl bg-brand-green text-brand-black font-heading font-black text-2xl flex items-center justify-center mb-6 border-2 border-brand-black shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]">1</div>
-               <h2 className="text-4xl sm:text-5xl font-heading font-extrabold mb-6 tracking-tight text-brand-black text-balance">Escolha o Modelo Base</h2>
+               <h2 className="text-4xl sm:text-5xl font-heading font-extrabold mb-6 tracking-tight text-brand-black text-balance">Passo 1 – Envio da Arte</h2>
                <p className="text-xl text-brand-black/70 font-medium leading-relaxed mb-6">
-                  Navegue pelas opções do nosso catálogo e selecione a modelagem ideal para começar o seu projeto: camisetas básicas, oversizeds, regatas ou moletons com caimento impecável.
+                  Envie sua arte em formato PDF informando: posição da estampa (frente, costas ou lateral), cores da estampa e tamanho conforme nosso guia técnico. Inclui até 2 alterações por estampa para garantir o resultado perfeito.
                </p>
-               <div className="inline-flex items-center gap-2 bg-brand-black text-brand-beige px-4 py-2 rounded-full text-sm font-bold">
-                  Defina o modelo de partida e simule a peça na tela.
+               <div className="inline-flex items-center gap-2 bg-brand-orange text-brand-beige px-4 py-2 rounded-full text-sm font-bold">
+                  R$ 40,00 — valor único da arte (reutilizável)
                </div>
            </div>
            
@@ -481,13 +481,13 @@ export function PersonalizacaoSteps() {
          <div className="step-card flex flex-col lg:flex-row items-center min-h-[70vh] border-b border-brand-black/10 pb-24 lg:pb-0 lg:flex-row-reverse">
             <div className="flex-1 lg:pl-16 mb-12 lg:mb-0">
                <div className="w-12 h-12 rounded-2xl bg-brand-green text-brand-black font-heading font-black text-2xl flex items-center justify-center mb-6 border-2 border-brand-black shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]">2</div>
-              <h2 className="text-4xl sm:text-5xl font-heading font-extrabold mb-6 tracking-tight text-brand-black text-balance">Desenvolvimento da Arte</h2>
+              <h2 className="text-4xl sm:text-5xl font-heading font-extrabold mb-6 tracking-tight text-brand-black text-balance">Passo 2 – Escolha das Peças</h2>
               <p className="text-xl text-brand-black/70 font-medium leading-relaxed">
-                 Nossos designers criam a arte do zero ou adaptamos a sua identidade visual para a nossa linha de produção de forma impecável.
+                 Encaminhe para nossa equipe qual será o modelo da personalização, seguindo a tabela de modelos mockup que aparece no início da página, e qual será a cor do modelo. Pode mandar a inspiração da cor que precisa para nossa equipe verificar a disponibilidade de tamanho e a cor mais próxima disponível.
               </p>
                <div className="mt-6 flex items-center gap-3">
-                  <span className="text-4xl font-heading font-black text-emerald-800">R$ 40,00</span>
-                  <span className="text-sm font-bold text-brand-black/60 uppercase tracking-widest max-w-[200px] leading-tight">Valor único de desenvolvimento</span>
+                  <span className="text-4xl font-heading font-black text-emerald-800">8 peças</span>
+                  <span className="text-sm font-bold text-brand-black/60 uppercase tracking-widest max-w-[200px] leading-tight">Pedido mínimo • 6 modelos disponíveis</span>
                </div>
            </div>
            
@@ -580,13 +580,13 @@ export function PersonalizacaoSteps() {
          <div className="step-card flex flex-col lg:flex-row items-center min-h-[70vh] border-b border-brand-black/10 pb-24 lg:pb-0">
             <div className="flex-1 lg:pr-16 mb-12 lg:mb-0">
                 <div className="w-12 h-12 rounded-2xl bg-brand-green text-brand-black font-heading font-black text-2xl flex items-center justify-center mb-6 border-2 border-brand-black shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]">3</div>
-               <h2 className="text-4xl sm:text-5xl font-heading font-extrabold mb-6 tracking-tight text-brand-black text-balance">Validação & Qualidade</h2>
+               <h2 className="text-4xl sm:text-5xl font-heading font-extrabold mb-6 tracking-tight text-brand-black text-balance">Passo 3 – Aprovação & Produção</h2>
                <p className="text-xl text-brand-black/70 font-medium leading-relaxed">
-                  Você recebe o mockup digital detalhado para aprovação visual. Nossa equipe valida o posicionamento exato, o tamanho e as cores da sua estampa na peça selecionada, garantindo precisão absoluta antes de iniciar a impressão.
+                  Após a sua aprovação, iniciamos a produção. O prazo de envio é de até 5 dias úteis após a confirmação do pagamento.
                </p>
             </div>
             
-            <div className="flex-1 w-full lg:h-[420px] min-h-[300px] sm:min-h-[350px] lg:min-h-0 bg-brand-black rounded-[2rem] p-8 lg:p-12 flex items-center justify-center step-mockup relative overflow-hidden shadow-2xl">
+            <div className="flex-1 w-full lg:h-[420px] min-h-[300px] sm:min-h-[350px] lg:min-h-0 bg-brand-pink rounded-[2rem] p-8 lg:p-12 flex items-center justify-center step-mockup relative overflow-hidden shadow-2xl">
                <div className="step3-box bg-white w-full max-w-sm rounded-2xl border border-brand-black/10 p-6 flex flex-col gap-4 relative z-10 transition-colors">
                   <div className="flex items-center gap-3 border-b border-brand-black/10 pb-4">
                      <PackageCheck size={24} className="text-brand-black" />
@@ -621,9 +621,9 @@ export function PersonalizacaoSteps() {
          <div className="step-card flex flex-col lg:flex-row items-center min-h-[70vh] border-b border-brand-black/10 pb-24 lg:pb-0 lg:flex-row-reverse">
             <div className="flex-1 lg:pl-16 mb-12 lg:mb-0">
                <div className="w-12 h-12 rounded-2xl bg-brand-green text-brand-black font-heading font-black text-2xl flex items-center justify-center mb-6 border-2 border-brand-black shadow-[4px_4px_0px_0px_rgba(17,17,17,1)]">4</div>
-               <h2 className="text-4xl sm:text-5xl font-heading font-extrabold mb-6 tracking-tight text-brand-black text-balance">Estamparia & Envio em 6 Dias</h2>
+               <h2 className="text-4xl sm:text-5xl font-heading font-extrabold mb-6 tracking-tight text-brand-black text-balance">Produção & Envio em 5 Dias</h2>
                <p className="text-xl text-brand-black/70 font-medium leading-relaxed">
-                  Sua arte aprovada entra imediatamente para a nossa linha de estamparia de alta performance. Aplicamos o seu design com impressão de alta definição nas peças prontas e postamos o seu lote em apenas 6 dias úteis.
+                  Com o mockup aprovado e o pagamento confirmado, sua coleção entra na produção e é postada em até 5 dias úteis. Acabamento premium, embalagem cuidadosa e envio para todo o Brasil.
                </p>
            </div>
            
@@ -634,7 +634,7 @@ export function PersonalizacaoSteps() {
                     <div className="step4-box w-20 h-20 bg-brand-green rounded-2xl border-2 border-brand-black shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] flex items-center justify-center">
                        <PackageCheck size={32} className="text-brand-black" />
                     </div>
-                    <div className="step4-truck w-20 h-20 bg-brand-black rounded-2xl border-2 border-brand-black shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] flex items-center justify-center text-brand-beige">
+                    <div className="step4-truck w-20 h-20 bg-brand-orange rounded-2xl border-2 border-brand-orange shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] flex items-center justify-center text-brand-beige">
                        <Truck size={32} />
                     </div>
                  </div>

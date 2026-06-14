@@ -74,24 +74,24 @@ export function PromoSection() {
   )
 
   return (
-    <section ref={containerRef} className="bg-black py-32 overflow-hidden relative">
+    <section ref={containerRef} className="bg-brand-pink py-32 overflow-hidden relative">
       <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
            
              {/* Left Column: Text */}
              <div className="flex flex-col items-start max-w-xl mx-auto lg:mx-0 relative">
-              <p className="measure-text text-sm font-bold tracking-wide text-zinc-400 mb-6 uppercase">
+              <p className="measure-text text-sm font-bold tracking-wide text-brand-orange mb-6 uppercase">
                 Alta Lucratividade
               </p>
-              <h2 className="measure-text text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-8 leading-[1.1] relative">
+              <h2 className="measure-text text-5xl sm:text-6xl font-extrabold tracking-tight text-brand-black mb-8 leading-[1.1] relative">
                 A moda premium que vende sozinha.
               </h2>
-              <p className="measure-text text-lg text-zinc-300 font-medium mb-10 leading-relaxed">
+              <p className="measure-text text-lg text-brand-black/75 font-medium mb-10 leading-relaxed">
                 Abasteça seu estoque com peças de caimento impecável e algodão premium Fio 30.1 Menegotti. Garanta margens de até 200% de lucro e conte com material de divulgação profissional gratuito.
               </p>
               <div className="measure-text">
                 <a
-                  href="https://wa.me/5562999895357?text=Olá%20quero%20me%20tornar%20um%20revendedor%20credenciado%20da%20Lamell%20Store"
+                  href="https://api.whatsapp.com/send/?phone=5562999895357&text=Ol%C3%A1+quero+me+tornar+um+revendedor+credenciado+da+Lamell+Store&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

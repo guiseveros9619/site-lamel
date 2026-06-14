@@ -4,9 +4,10 @@ import { useState, useRef } from 'react'
 import { CheckCircle2, ShoppingBag, Zap, Shirt, Star, Tag, Smartphone, Scissors } from 'lucide-react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SectionBadge } from '@/components/ui/SectionBadge'
 
-gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 function PixVisuals() {
   const container = useRef<HTMLDivElement>(null)
@@ -94,7 +95,7 @@ function EscrowVisuals() {
     <div ref={container} className="relative w-full h-full flex justify-center lg:block perspective-[1000px]">
       {/* Mockup 1: Telegram (Esquerda) */}
       <div className="escrow-contract absolute left-1/2 -translate-x-1/2 ml-[-40px] lg:ml-0 lg:left-auto lg:translate-x-0 lg:right-[35%] top-0 sm:top-8 sm:rotate-[-5deg] z-10 w-64 rounded-2xl bg-brand-blue overflow-hidden border-2 border-brand-black origin-left shadow-lg">
-         <div className="h-20 bg-brand-black flex items-center px-4 border-b border-brand-black/20 gap-3 text-brand-beige">
+         <div className="h-20 bg-brand-orange flex items-center px-4 border-b border-brand-black/20 gap-3 text-brand-beige">
              <Smartphone size={20} className="text-brand-blue" />
              <div>
                 <h4 className="text-sm font-heading font-bold">Comunidade VIP</h4>
@@ -112,7 +113,7 @@ function EscrowVisuals() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-xs font-bold text-brand-black">Suporte</span>
-              <span className="text-[10px] text-brand-beige bg-brand-black px-2 py-1 rounded-sm font-bold uppercase tracking-wider">Personalizado</span>
+              <span className="text-[10px] text-brand-beige bg-brand-orange px-2 py-1 rounded-sm font-bold uppercase tracking-wider">Personalizado</span>
             </div>
          </div>
       </div>
@@ -175,11 +176,31 @@ const TAB_CONTENT = {
 
 type TabName = keyof typeof TAB_CONTENT;
 
+const TAB_KEYS = Object.keys(TAB_CONTENT) as TabName[]
+const NUM_TABS = TAB_KEYS.length
+
 export function StorySection() {
   const [activeTab, setActiveTab] = useState<TabName>('Qualidade Premium')
   const containerRef = useRef<HTMLElement>(null)
+  // Instância do ScrollTrigger de pin (só existe no desktop, sem reduced-motion)
+  const pinTriggerRef = useRef<ScrollTrigger | null>(null)
+  // Evita re-renders desnecessários no onUpdate
+  const activeIndexRef = useRef(0)
 
   const currentContent = TAB_CONTENT[activeTab]
+
+  // Clique numa aba: se o pin estiver ativo, rola até o segmento correspondente
+  // (o onUpdate troca a aba); caso contrário, troca direto.
+  const handleTabClick = (tab: TabName) => {
+    const trigger = pinTriggerRef.current
+    const idx = TAB_KEYS.indexOf(tab)
+    if (trigger) {
+      const target = trigger.start + (trigger.end - trigger.start) * ((idx + 0.5) / NUM_TABS)
+      window.scrollTo({ top: target, behavior: 'smooth' })
+    } else {
+      setActiveTab(tab)
+    }
+  }
 
   useGSAP(
     () => {
@@ -231,6 +252,35 @@ export function StorySection() {
       } else {
         gsap.set(['.anim-story-header', '.anim-story-tabs', '.anim-story-card'], { opacity: 1, y: 0 })
       }
+
+      // Troca de abas guiada pelo scroll: trava (pin) a seção centralizada e
+      // distribui a rolagem entre as abas. Só no desktop e sem reduced-motion.
+      const mm = gsap.matchMedia()
+      mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => {
+        const trigger = ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: 'center center',
+          end: () => `+=${window.innerHeight * NUM_TABS}`,
+          pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            const idx = Math.min(NUM_TABS - 1, Math.floor(self.progress * NUM_TABS))
+            if (idx !== activeIndexRef.current) {
+              activeIndexRef.current = idx
+              setActiveTab(TAB_KEYS[idx])
+            }
+          },
+        })
+        pinTriggerRef.current = trigger
+
+        return () => {
+          pinTriggerRef.current = null
+          trigger.kill()
+        }
+      })
+
+      return () => mm.revert()
     },
     { scope: containerRef }
   )
@@ -263,7 +313,7 @@ export function StorySection() {
               return (
                 <button
                   key={tab}
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => handleTabClick(tab)}
                   className={`px-8 py-3.5 rounded-full text-sm font-bold transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 ${
                     activeTab === tab
                       ? `${tabInfo.colorClass} shadow-md scale-105`

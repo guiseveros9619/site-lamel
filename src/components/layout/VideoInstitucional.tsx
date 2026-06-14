@@ -58,7 +58,7 @@ export function VideoInstitucional() {
   )
 
   return (
-    <section ref={containerRef} className="bg-brand-black py-24 lg:py-32 overflow-hidden border-t border-brand-black/5 relative">
+    <section ref={containerRef} className="bg-brand-pink py-24 lg:py-32 overflow-hidden border-t border-brand-black/5 relative">
       {/* Background glow para dar uma profundidade cinematográfica */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-brand-purple/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -67,16 +67,16 @@ export function VideoInstitucional() {
           <SectionBadge variant="dark-pink" className="anim-video-text opacity-0 translate-y-10 mb-4">
             Por dentro da marca
           </SectionBadge>
-          <h2 className="anim-video-text opacity-0 translate-y-10 text-5xl sm:text-6xl font-heading font-extrabold mb-6 text-brand-beige leading-tight">
+          <h2 className="anim-video-text opacity-0 translate-y-10 text-5xl sm:text-6xl font-heading font-extrabold mb-6 text-brand-black leading-tight">
             Somos Lamell Store.
           </h2>
-          <p className="anim-video-text opacity-0 translate-y-10 text-xl text-brand-beige/70 font-medium leading-relaxed">
+          <p className="anim-video-text opacity-0 translate-y-10 text-xl text-brand-black/70 font-medium leading-relaxed">
             Conheça a nossa operação e veja como produzimos as peças premium que chegam até você. Rigor e qualidade em cada etapa.
           </p>
         </div>
 
         {/* Video Player Wrapper */}
-        <div className="anim-video-player opacity-0 translate-y-10 scale-95 max-w-5xl mx-auto w-full aspect-video bg-[#111] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-brand-beige/10 relative group">
+        <div className="anim-video-player opacity-0 translate-y-10 scale-95 max-w-5xl mx-auto w-full aspect-video bg-[#111] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-brand-black/10 relative group">
           
           {!isPlaying ? (
             <button 
@@ -96,7 +96,7 @@ export function VideoInstitucional() {
               </div>
               
               {/* Overlay Escuro para o texto/botão saltar */}
-              <div className="absolute inset-0 bg-brand-black/30 group-hover:bg-brand-black/20 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-brand-black/15 group-hover:bg-brand-black/10 transition-colors duration-500" />
               
               {/* Botão de Play */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-2xl border-4 border-white transition-all group-hover:scale-110 active:scale-90 group-hover:bg-brand-orange/90">

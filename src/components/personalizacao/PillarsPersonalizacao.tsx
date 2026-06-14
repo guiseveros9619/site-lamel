@@ -7,10 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
   ChevronLeft,
   ChevronRight,
+  Package,
   Palette,
-  PackageSearch,
-  PenTool,
-  Shuffle,
+  Eye,
+  Truck,
 } from 'lucide-react'
 
 if (typeof window !== 'undefined') {
@@ -19,27 +19,27 @@ if (typeof window !== 'undefined') {
 
 const PILLARS = [
   {
-    icon: <PenTool size={28} />,
-    title: 'Estampe a sua visão',
-    description: 'Dê vida a conceitos autênticos com estampas exclusivas de definição máxima e toque zero.',
+    icon: <Package size={28} />,
+    title: 'A partir de 8 peças',
+    description: 'Pedido mínimo flexível para viabilizar pequenos eventos, grupos e lojas que estão começando.',
     color: 'bg-brand-orange text-brand-black',
   },
   {
     icon: <Palette size={28} />,
-    title: 'Sua marca em destaque',
-    description: 'Aplique a sua assinatura visual no peito, nuca, mangas ou etiquetas com acabamento de alto padrão.',
+    title: 'Arte que rende sempre',
+    description: 'Valor da arte de R$ 40,00 cobrado uma única vez. Reutilize a mesma arte quantas vezes quiser, sem custo adicional.',
     color: 'bg-brand-blue text-brand-black',
   },
   {
-    icon: <PackageSearch size={28} />,
-    title: 'Coleção 100% autoral',
-    description: 'Nossas peças prontas não levam nenhuma etiqueta da Tshirteria, prontas para receberem a marca própria do seu negócio.',
+    icon: <Eye size={28} />,
+    title: 'Mockup em 24h',
+    description: 'Você recebe a estampa aplicada na peça para aprovação em até 1 dia útil após o envio do material.',
     color: 'bg-brand-green text-brand-black',
   },
   {
-    icon: <Shuffle size={28} />,
-    title: 'Variedade de Catálogo',
-    description: 'Selecione as cores e modelos prontos do nosso estoque que melhor combinam com a identidade da sua marca.',
+    icon: <Truck size={28} />,
+    title: 'Pronto em 5 dias',
+    description: 'Envio em até 5 dias úteis após aprovação do mockup e confirmação do pagamento. Produção profissional para todo o Brasil.',
     color: 'bg-brand-purple text-brand-black',
   },
 ]

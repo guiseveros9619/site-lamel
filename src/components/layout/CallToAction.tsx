@@ -41,13 +41,13 @@ export function CallToAction({ title, description, buttonText, buttonLink = "#" 
   )
 
   return (
-    <section ref={container} className="bg-brand-black py-32 border-t border-brand-beige/5">
+    <section ref={container} className="bg-brand-pink py-32 border-t border-brand-black/5">
       <div className="container mx-auto max-w-5xl px-6 lg:px-8 text-center">
-        
-        <h2 className="anim-cta-text text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight mb-8 text-brand-beige">
+
+        <h2 className="anim-cta-text text-5xl sm:text-6xl font-heading font-extrabold leading-tight tracking-tight mb-8 text-brand-black">
           {title}
         </h2>
-        <p className="anim-cta-text text-xl text-brand-beige/70 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+        <p className="anim-cta-text text-xl text-brand-black/70 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
          {description}
         </p>
 

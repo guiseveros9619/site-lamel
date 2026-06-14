@@ -35,7 +35,7 @@ export function NumbersSection() {
   )
 
   return (
-    <section ref={containerRef} className="bg-brand-black py-24 overflow-hidden border-t border-brand-beige/10">
+    <section ref={containerRef} className="bg-brand-beige py-24 overflow-hidden border-t border-brand-black/10">
       <div className="container mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           
@@ -44,14 +44,14 @@ export function NumbersSection() {
             <p className="anim-up-numbers opacity-0 translate-y-10 mb-4 text-sm font-bold tracking-widest text-brand-yellow uppercase">
               Oportunidade nacional
             </p>
-            <h2 className="anim-up-numbers opacity-0 translate-y-10 text-5xl font-heading font-extrabold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl text-brand-beige text-balance">
+            <h2 className="anim-up-numbers opacity-0 translate-y-10 text-5xl font-heading font-extrabold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl text-brand-black text-balance">
               Presença e alcance em todo o Brasil.
             </h2>
           </div>
 
           {/* Right Column */}
           <div className="flex flex-col justify-end lg:pb-4">
-            <p className="anim-up-numbers opacity-0 translate-y-10 mb-10 text-xl leading-relaxed text-brand-beige/70 font-medium">
+            <p className="anim-up-numbers opacity-0 translate-y-10 mb-10 text-xl leading-relaxed text-brand-black/70 font-medium">
               A Lamell Store envia os pedidos para todo o território brasileiro e atualmente conta com revendedores em <span className="text-brand-yellow font-bold">todos os 27 estados do Brasil</span>. Um mercado gigante à sua espera.
             </p>
             <div className="anim-up-numbers opacity-0 translate-y-10">

@@ -53,15 +53,29 @@ export default function RootLayout({
       {/* We will load fonts via external stylesheet for now to avoid the build error */}
       <head>
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
             --font-satoshi: 'Satoshi', system-ui, sans-serif;
-            --font-made-tommy: 'Satoshi', system-ui, sans-serif; /* Fallback for Made Tommy */
+            /* Heading principal da Lamell — Inter (Rasmus Andersson, Google Fonts),
+               sans-serif padrão de landing pages sérias modernas (Vercel, Linear, Stripe).
+               Aplicada em TODOS os headers/títulos via .font-heading. */
+            --font-made-tommy: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
           }
-          .font-heading { font-weight: 900; }
+          /* Tracking levemente apertado é o look moderno de landing page séria.
+             Cor: magenta da marca (#d50084) em todos os headings. */
+          .font-heading {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: var(--color-brand-orange) !important;
+          }
         ` }} />
       </head>
       <body
+        suppressHydrationWarning
         className="min-h-screen bg-brand-beige text-brand-black antialiased selection:bg-brand-orange selection:text-white flex flex-col font-sans"
       >
         <a

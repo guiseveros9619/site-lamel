@@ -6,6 +6,7 @@ import { NumbersSection } from '@/components/layout/NumbersSection'
 import { CampaignsSection } from '@/components/layout/CampaignsSection'
 import { StorySection } from '@/components/layout/StorySection'
 import { PromoSection } from '@/components/layout/PromoSection'
+import { FeedbackSection } from '@/components/layout/FeedbackSection'
 
 export const metadata: Metadata = {
   title: {
@@ -29,6 +30,7 @@ export default function Home() {
       <StorySection />
       <PromoSection />
       <CampaignsSection />
+      <FeedbackSection />
       <NumbersSection />
     </>
   )

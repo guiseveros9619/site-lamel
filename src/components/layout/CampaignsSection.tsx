@@ -83,7 +83,7 @@ export function CampaignsSection() {
             <p className="text-brand-black/70 leading-relaxed mb-8 flex-grow font-medium">
               Crie a sua própria marca (Private Label) personalizando os produtos com a sua logomarca ou escolhendo nossas peças.
             </p>
-            <div className="w-12 h-12 rounded-full bg-brand-black text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
+            <div className="w-12 h-12 rounded-full bg-brand-orange text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
               <ArrowRight size={24} aria-hidden="true" />
             </div>
           </Link>
@@ -97,7 +97,7 @@ export function CampaignsSection() {
             <p className="text-brand-black/70 leading-relaxed mb-8 flex-grow font-medium">
               Apareça no nosso mapa interativo e seja encontrado por clientes finais da sua região que buscam produtos da Lamell Store.
             </p>
-            <div className="w-12 h-12 rounded-full bg-brand-black text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
+            <div className="w-12 h-12 rounded-full bg-brand-orange text-brand-beige flex items-center justify-center transition-transform group-hover:translate-x-2">
               <ArrowRight size={24} aria-hidden="true" />
             </div>
           </Link>

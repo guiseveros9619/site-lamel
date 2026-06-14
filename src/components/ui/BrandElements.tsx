@@ -208,7 +208,7 @@ export function StayBoldSticker({ className = 'w-28 h-24', color = 'orange', ...
 export function ConfidenceClubSticker({ className = 'w-36 h-28', ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={`${className} flex items-center justify-center rounded-[30%_70%_50%_50%/40%_40%_60%_60%] bg-brand-black border-[3px] border-brand-black shadow-[4px_4px_0px_rgba(255,138,76,0.3)] select-none cursor-grab active:cursor-grabbing hover:scale-105 active:scale-95 transition-transform duration-100 rotate-[4deg] p-4 flex-col text-center`}
+      className={`${className} flex items-center justify-center rounded-[30%_70%_50%_50%/40%_40%_60%_60%] bg-brand-orange border-[3px] border-brand-orange shadow-[4px_4px_0px_rgba(255,255,255,0.4)] select-none cursor-grab active:cursor-grabbing hover:scale-105 active:scale-95 transition-transform duration-100 rotate-[4deg] p-4 flex-col text-center`}
       {...props}
     >
       <div className="flex items-center gap-1.5 justify-center mb-1">

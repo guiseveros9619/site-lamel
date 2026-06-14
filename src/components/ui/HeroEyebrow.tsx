@@ -89,7 +89,7 @@ const variantStyles: Record<
     chipIcon: 'text-brand-black',
   },
   dark: {
-    wrap: 'border-brand-black/40 bg-brand-black text-brand-orange shadow-[0_1px_0_rgba(255,138,76,0.06),0_12px_30px_-18px_rgba(17,17,17,0.55)]',
+    wrap: 'border-brand-orange/30 bg-brand-orange text-brand-beige shadow-[0_1px_0_rgba(255,255,255,0.06),0_12px_30px_-18px_rgba(213,0,132,0.4)]',
     chip: 'bg-brand-orange',
     chipIcon: 'text-brand-black',
   },

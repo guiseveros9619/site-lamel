@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { HeroPersonalizacao } from '@/components/personalizacao/HeroPersonalizacao'
-import { PillarsPersonalizacao } from '@/components/personalizacao/PillarsPersonalizacao'
+import { PriceCatalog } from '@/components/personalizacao/PriceCatalog'
+import { SizeGuideSection } from '@/components/personalizacao/SizeGuideSection'
+import { DesignerMockupSection } from '@/components/personalizacao/DesignerMockupSection'
 import { PersonalizacaoSteps } from '@/components/personalizacao/PersonalizacaoSteps'
 import { FAQPersonalizacao } from '@/components/personalizacao/FAQPersonalizacao'
 import { CallToAction } from '@/components/layout/CallToAction'
@@ -21,15 +23,17 @@ export default function PersonalizacaoPage() {
   return (
     <>
       <HeroPersonalizacao />
-      <PillarsPersonalizacao />
+      <PriceCatalog />
+      <SizeGuideSection />
+      <DesignerMockupSection />
       <PersonalizacaoSteps />
-      
+
       <BrandPromoSection
-        tag="Private Label & Customização"
-        title="Sua marca, com a nossa qualidade."
-        description="Oferecemos um serviço completo de Private Label. Nós cuidamos de toda a modelagem, costura e estamparia premium para você focar exclusivamente em gerir e crescer a sua marca própria."
-        imagePath="/2.jpg"
-        imageAlt="Modelo vestindo camiseta personalizada cherry streetwear"
+        tag="Qualidade Premium"
+        title="Personalização com a qualidade que sua marca merece."
+        description="Cada peça da Lamell Store passa pelo nosso rigoroso controle de qualidade — do tecido à estampa. Algodão premium, costura reforçada e estamparia profissional garantem peças que vestem bem, duram muito e representam a sua marca com o acabamento que ela merece."
+        imagePath="/8.jpg"
+        imageAlt="Detalhe de camiseta personalizada Lamell Store — acabamento premium"
         isImageLeft={true}
         stickers={{
           greenFlower: true,
@@ -37,10 +41,10 @@ export default function PersonalizacaoPage() {
       />
 
       <FAQPersonalizacao />
-      <CallToAction 
-        title="Vamos criar sua própria marca?"
-        description="Dê vida às suas ideias com a qualidade Premium da Lamell Store. Produzimos e estampamos com a sua identidade para você focar no que importa: vender."
-        buttonText="Fazer orçamento"
+      <CallToAction
+        title="Produção profissional. Qualidade premium."
+        description="Envio para todo Brasil. Crie agora a sua coleção personalizada com a Lamell Store."
+        buttonText="Solicitar orçamento"
         color="pink"
       />
     </>

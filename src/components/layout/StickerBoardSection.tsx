@@ -293,7 +293,7 @@ export function StickerBoardSection() {
           {/* Action button to reset */}
           <button
             onClick={() => resetStickers(true)}
-            className="inline-flex items-center gap-2 rounded-full border-2 border-brand-black bg-brand-beige px-6 py-3 text-sm font-bold text-brand-black hover:bg-brand-black hover:text-brand-beige transition-colors shadow-md shrink-0 self-start md:self-auto cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-brand-black bg-brand-beige px-6 py-3 text-sm font-bold text-brand-black hover:bg-brand-orange hover:text-brand-beige transition-colors shadow-md shrink-0 self-start md:self-auto cursor-pointer"
           >
             <RotateCcw size={16} />
             Resetar Mural
@@ -313,7 +313,7 @@ export function StickerBoardSection() {
           }}
         >
           {/* Helpful indicator text */}
-          <div className="absolute bottom-6 right-6 bg-brand-black text-brand-beige text-xs font-bold px-3 py-1.5 rounded-full z-10 opacity-70 flex items-center gap-1.5 pointer-events-none">
+          <div className="absolute bottom-6 right-6 bg-brand-orange text-brand-beige text-xs font-bold px-3 py-1.5 rounded-full z-10 opacity-70 flex items-center gap-1.5 pointer-events-none">
             <span>👉 Arraste os adesivos para personalizar a mesa!</span>
           </div>
 

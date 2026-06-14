@@ -233,7 +233,7 @@ export function InteractiveMap() {
             {selectedState && (
               <button 
                 onClick={resetMap}
-                className="absolute top-6 right-6 z-10 bg-brand-black text-white p-3 rounded-full hover:bg-brand-orange hover:text-brand-black transition-all shadow-md active:scale-95"
+                className="absolute top-6 right-6 z-10 bg-brand-orange text-brand-beige p-3 rounded-full hover:bg-brand-orange/90 transition-all shadow-md active:scale-95"
                 title="Resetar Zoom"
               >
                 <X size={20} />
@@ -329,7 +329,7 @@ export function InteractiveMap() {
 
             {/* Tooltip Overlay */}
             {hoveredState && !selectedState && (
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-brand-black text-brand-beige px-6 py-3 rounded-full font-bold text-sm shadow-2xl flex items-center gap-3 border border-white/10 pointer-events-none animate-in fade-in slide-in-from-bottom-2 duration-200">
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-brand-orange text-brand-beige px-6 py-3 rounded-full font-bold text-sm shadow-2xl flex items-center gap-3 border border-brand-beige/20 pointer-events-none animate-in fade-in slide-in-from-bottom-2 duration-200">
                 <MapPin size={16} className="text-brand-orange" />
                 <span>{STATES.find(s => s.value === hoveredState)?.label}</span>
                 <span className={`px-2 py-0.5 rounded text-xs font-bold ${
@@ -427,7 +427,7 @@ export function InteractiveMap() {
                     </h3>
                     <p className="text-brand-black/60 font-bold">{filteredResellers.length} {filteredResellers.length === 1 ? 'revendedor autorizado encontrado.' : 'revendedores autorizados encontrados.'}</p>
                   </div>
-                  <div className="bg-brand-black text-brand-beige px-5 py-2.5 rounded-full font-bold text-sm inline-flex items-center gap-2 shadow-md self-center sm:self-auto">
+                  <div className="bg-brand-orange text-brand-beige px-5 py-2.5 rounded-full font-bold text-sm inline-flex items-center gap-2 shadow-md self-center sm:self-auto">
                     <Store size={16} className="text-brand-orange" /> Rede credenciada
                   </div>
                 </div>
@@ -462,7 +462,7 @@ export function InteractiveMap() {
                         href={`https://wa.me/${reseller.phone}?text=Olá,%20vi%20sua%20loja%20no%20mapa%20da%20Lamell%20Store%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos.`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-brand-black text-brand-beige font-extrabold hover:bg-brand-orange hover:text-brand-black transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange border border-transparent hover:border-brand-black shadow-md active:scale-95"
+                        className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-brand-orange text-brand-beige font-extrabold hover:bg-brand-orange/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange border border-transparent shadow-md active:scale-95"
                       >
                         <Phone size={18} /> Chamar no WhatsApp
                       </a>
@@ -472,23 +472,23 @@ export function InteractiveMap() {
               </div>
             ) : (
               // "Seja o primeiro" call-to-action banner
-              <div className="anim-coverage-banner max-w-3xl mx-auto text-center bg-brand-black rounded-[3rem] p-10 lg:p-16 border border-brand-beige/10 shadow-2xl relative overflow-hidden">
+              <div className="anim-coverage-banner max-w-3xl mx-auto text-center bg-brand-pink rounded-[3rem] p-10 lg:p-16 border border-brand-black/10 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-orange/20 blur-[80px] rounded-full"></div>
-                
-                <div className="w-24 h-24 bg-brand-orange text-brand-black rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg rotate-12 relative z-10 border-4 border-brand-black">
+
+                <div className="w-24 h-24 bg-brand-orange text-brand-beige rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg rotate-12 relative z-10 border-4 border-brand-orange">
                   <AlertTriangle size={40} strokeWidth={2.5} />
                 </div>
-                
-                <h3 className="text-4xl font-heading font-extrabold text-brand-beige mb-6 relative z-10 leading-tight">
+
+                <h3 className="text-4xl font-heading font-extrabold text-brand-black mb-6 relative z-10 leading-tight">
                   Sua região está<br/>no nosso radar.
                 </h3>
-                
-                <p className="text-brand-beige/70 font-medium text-xl mb-12 leading-relaxed max-w-2xl mx-auto relative z-10">
-                  Ainda não temos revendedores oficiais ativos em <strong className="text-white">{selectedCity ? `${selectedCity} - ${selectedState}` : STATES.find(s => s.value === selectedState)?.label}</strong>. Essa é a oportunidade perfeita para você liderar o mercado de atacado e revenda na sua região.
+
+                <p className="text-brand-black/70 font-medium text-xl mb-12 leading-relaxed max-w-2xl mx-auto relative z-10">
+                  Ainda não temos revendedores oficiais ativos em <strong className="text-brand-orange">{selectedCity ? `${selectedCity} - ${selectedState}` : STATES.find(s => s.value === selectedState)?.label}</strong>. Essa é a oportunidade perfeita para você liderar o mercado de atacado e revenda na sua região.
                 </p>
                 
                 <a 
-                  href={`https://wa.me/5562999895357?text=Olá!%20Gostaria%20de%20ser%20o%20primeiro%20revendedor%20autorizado%20da%20Lamell%20Store%20em%20${encodeURIComponent((selectedCity ? `${selectedCity} - ` : '') + STATES.find(s => s.value === selectedState)?.label)}!`}
+                  href={`https://api.whatsapp.com/send/?phone=5562999895357&text=Ol%C3%A1!+Gostaria+de+ser+o+primeiro+revendedor+autorizado+da+Lamell+Store+em+${encodeURIComponent((selectedCity ? `${selectedCity} - ` : '') + STATES.find(s => s.value === selectedState)?.label)}!&type=phone_number&app_absent=0`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 h-16 rounded-full bg-brand-green text-brand-black font-extrabold text-lg hover:bg-brand-green/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green relative z-10 shadow-[0_0_30px_rgba(255,142,191,0.3)] active:scale-95"

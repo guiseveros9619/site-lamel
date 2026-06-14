@@ -34,7 +34,7 @@ export function LookbookCarousel() {
   const row2Doubled = [...ROW2_IMAGES, ...ROW2_IMAGES, ...ROW2_IMAGES]
 
   return (
-    <section className="bg-brand-black py-24 sm:py-32 overflow-hidden relative border-t border-brand-black/5">
+    <section className="bg-brand-beige py-24 sm:py-32 overflow-hidden relative border-t border-brand-black/5">
       {/* Self-contained marquee keyframe styling */}
       <style>{`
         @keyframes marquee-left {
@@ -93,10 +93,10 @@ export function LookbookCarousel() {
             Qualidade Real
           </SectionBadge>
           
-          <h2 className="text-5xl sm:text-6xl font-heading font-extrabold mb-6 text-brand-beige leading-tight">
+          <h2 className="text-5xl sm:text-6xl font-heading font-extrabold mb-6 text-brand-black leading-tight">
             O Caimento que Vende
           </h2>
-          <p className="text-xl text-brand-beige/70 font-medium max-w-2xl mx-auto">
+          <p className="text-xl text-brand-black/70 font-medium max-w-2xl mx-auto">
             Veja a modelagem streetwear impecável e a alta costura direto no corpo. Fotos profissionais gratuitas para você divulgar na sua marca ou revenda.
           </p>
         </div>
@@ -107,14 +107,14 @@ export function LookbookCarousel() {
         
         {/* ROW 1: Moves Left */}
         <div className="w-full overflow-hidden py-2 relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-brand-black to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-brand-black to-transparent z-20 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-brand-beige to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-brand-beige to-transparent z-20 pointer-events-none" />
 
           <div className="animate-marquee-left gap-6 md:gap-8 px-3">
             {row1Doubled.map((item, index) => (
               <div
                 key={`row1-${index}`}
-                className="w-[180px] sm:w-[240px] md:w-[280px] aspect-[2/3] shrink-0 border border-brand-beige/15 rounded-2xl sm:rounded-3xl overflow-hidden bg-[#151515] shadow-2xl relative group transition-all duration-500 hover:scale-[1.02] hover:border-brand-pink/40 hover:shadow-[0_10px_30px_rgba(255,158,198,0.15)] cursor-default"
+                className="w-[180px] sm:w-[240px] md:w-[280px] aspect-[2/3] shrink-0 border border-brand-black/10 rounded-2xl sm:rounded-3xl overflow-hidden bg-brand-beige shadow-xl relative group transition-all duration-500 hover:scale-[1.02] hover:border-brand-orange/40 hover:shadow-[0_10px_30px_rgba(213,0,132,0.15)] cursor-default"
               >
                 <Image
                   src={item.src}
@@ -126,9 +126,9 @@ export function LookbookCarousel() {
                 />
                 
                 {/* Minimal label overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
-                  <div className="bg-brand-black/60 backdrop-blur-md border border-brand-beige/10 px-3 py-1.5 rounded-full">
-                    <p className="text-[10px] font-bold text-brand-beige uppercase tracking-widest leading-none">
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
+                  <div className="bg-white/80 backdrop-blur-md border border-brand-black/10 px-3 py-1.5 rounded-full text-brand-black">
+                    <p className="text-[10px] font-bold text-brand-black uppercase tracking-widest leading-none">
                       {item.label}
                     </p>
                   </div>
@@ -140,14 +140,14 @@ export function LookbookCarousel() {
 
         {/* ROW 2: Moves Right */}
         <div className="w-full overflow-hidden py-2 relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-brand-black to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-brand-black to-transparent z-20 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-brand-beige to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-brand-beige to-transparent z-20 pointer-events-none" />
 
           <div className="animate-marquee-right gap-6 md:gap-8 px-3">
             {row2Doubled.map((item, index) => (
               <div
                 key={`row2-${index}`}
-                className="w-[180px] sm:w-[240px] md:w-[280px] aspect-[2/3] shrink-0 border border-brand-beige/15 rounded-2xl sm:rounded-3xl overflow-hidden bg-[#151515] shadow-2xl relative group transition-all duration-500 hover:scale-[1.02] hover:border-brand-pink/40 hover:shadow-[0_10px_30px_rgba(255,158,198,0.15)] cursor-default"
+                className="w-[180px] sm:w-[240px] md:w-[280px] aspect-[2/3] shrink-0 border border-brand-black/10 rounded-2xl sm:rounded-3xl overflow-hidden bg-brand-beige shadow-xl relative group transition-all duration-500 hover:scale-[1.02] hover:border-brand-orange/40 hover:shadow-[0_10px_30px_rgba(213,0,132,0.15)] cursor-default"
               >
                 <Image
                   src={item.src}
@@ -158,9 +158,9 @@ export function LookbookCarousel() {
                 />
                 
                 {/* Minimal label overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
-                  <div className="bg-brand-black/60 backdrop-blur-md border border-brand-beige/10 px-3 py-1.5 rounded-full">
-                    <p className="text-[10px] font-bold text-brand-beige uppercase tracking-widest leading-none">
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
+                  <div className="bg-white/80 backdrop-blur-md border border-brand-black/10 px-3 py-1.5 rounded-full text-brand-black">
+                    <p className="text-[10px] font-bold text-brand-black uppercase tracking-widest leading-none">
                       {item.label}
                     </p>
                   </div>
