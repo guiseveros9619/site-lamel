@@ -64,11 +64,11 @@ export function HeroPersonalizacao() {
           {/* Coluna esquerda — texto */}
           <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <h1 className="anim-hero-text text-5xl sm:text-6xl lg:text-[4.5rem] font-heading font-extrabold leading-[1.05] tracking-tight mb-8 text-brand-black text-balance">
-              Personalização<br/>de Camisetas
+              Transforme sua<br/>ideia em camiseta!
             </h1>
 
             <p className="anim-hero-text text-lg sm:text-xl text-brand-black/80 leading-relaxed font-medium mb-10 max-w-xl mx-auto lg:mx-0">
-              Crie camisetas personalizadas para sua marca, evento, grupo ou loja. Pedido mínimo: apenas 8 peças. Produção profissional, qualidade premium e envio para todo Brasil.
+              Camisetas personalizadas para marcas, eventos, grupos e lojas. Pedido mínimo de <strong className="font-bold text-brand-black">apenas 8 peças</strong>, qualidade premium e envio para todo o Brasil.
             </p>
 
             <div className="anim-hero-text flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4">
@@ -76,7 +76,7 @@ export function HeroPersonalizacao() {
                 href="https://api.whatsapp.com/send/?phone=5562999895357&text=Ol%C3%A1+quero+iniciar+um+projeto+personalizado&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-brand-green px-8 text-base font-bold text-brand-black hover:bg-brand-green/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black shadow-lg w-full sm:w-auto"
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-brand-blue px-8 text-base font-black text-white hover:bg-brand-orange transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange shadow-lg w-full sm:w-auto"
               >
                 Solicitar orçamento
                 <ArrowRight size={18} />
