@@ -64,7 +64,8 @@ export function HeroPersonalizacao() {
           {/* Coluna esquerda — texto */}
           <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <h1 className="anim-hero-text text-5xl sm:text-6xl lg:text-[4.5rem] font-heading font-extrabold leading-[1.05] tracking-tight mb-8 text-brand-black text-balance">
-              Transforme sua<br/>ideia em camiseta!
+              Transforme sua ideia<br/>
+              <span className="font-heading-italic font-medium">em camiseta!</span>
             </h1>
 
             <p className="anim-hero-text text-lg sm:text-xl text-brand-black/80 leading-relaxed font-medium mb-10 max-w-xl mx-auto lg:mx-0">

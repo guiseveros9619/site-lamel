@@ -5,7 +5,7 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ChevronLeft, ChevronRight, Shirt } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { SectionBadge } from '@/components/ui/SectionBadge'
 
 if (typeof window !== 'undefined') {
@@ -162,18 +162,20 @@ export function PriceCatalog() {
                   className="object-cover transition-transform duration-500 hover:scale-[1.05]"
                   sizes="(max-width:640px) 260px, (max-width:768px) 300px, 340px"
                 />
+                <span className="absolute top-4 left-4 z-10 inline-flex items-center rounded-full bg-white/95 px-3.5 py-1.5 text-xs font-bold tracking-wide text-brand-orange shadow-sm backdrop-blur">
+                  Algodão premium
+                </span>
               </div>
-              <div className="p-5 sm:p-6 flex flex-col gap-2">
-                <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-brand-black leading-tight">
+              <div className="p-5 sm:p-6 flex flex-col gap-1.5">
+                <h3 className="font-extrabold text-xl sm:text-2xl text-brand-black leading-tight">
                   {item.modelo}
                 </h3>
-                <p className="text-brand-orange font-extrabold text-lg sm:text-xl">
-                  A partir de{' '}
-                  <span className="text-2xl sm:text-3xl">{item.preco}</span>
+                <p className="flex items-baseline gap-2">
+                  <span className="text-sm font-medium text-brand-black/50">A partir de</span>
+                  <span className="text-brand-orange font-extrabold text-2xl sm:text-3xl">
+                    {item.preco}
+                  </span>
                 </p>
-                <span className="inline-flex items-center gap-1.5 self-start mt-1 text-xs font-bold uppercase tracking-wider text-brand-black/60 bg-brand-pink/60 px-3 py-1.5 rounded-full">
-                  <Shirt size={12} /> Tamanhos {item.tamanhos}
-                </span>
               </div>
             </article>
           ))}

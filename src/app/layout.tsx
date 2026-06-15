@@ -56,19 +56,28 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
             --font-satoshi: 'Satoshi', system-ui, sans-serif;
-            /* Heading principal da Lamell — Inter (Rasmus Andersson, Google Fonts),
-               sans-serif padrão de landing pages sérias modernas (Vercel, Linear, Stripe).
-               Aplicada em TODOS os headers/títulos via .font-heading. */
-            --font-made-tommy: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            /* Heading principal da Lamell — Playfair Display (serifada display,
+               Google Fonts). Look editorial/elegante aplicado em TODOS os
+               headers/títulos via .font-heading e h1–h6. */
+            --font-made-tommy: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            /* Fonte secundária do anexo: a mesma família em itálico, usada como
+               acento (.font-heading-italic). */
           }
-          /* Tracking levemente apertado é o look moderno de landing page séria.
-             Cor: magenta da marca (#d50084) em todos os headings. */
+          /* Cor: magenta da marca (#d50084) em todos os headings. */
           .font-heading {
             font-weight: 800;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+            color: var(--color-brand-orange) !important;
+          }
+          /* Acento itálico (fonte secundária do anexo) */
+          .font-heading-italic {
+            font-family: var(--font-heading);
+            font-style: italic;
             line-height: 1.1;
             color: var(--color-brand-orange) !important;
           }
