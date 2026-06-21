@@ -5,7 +5,7 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Palette, Clock, CheckCircle2, Sparkles, FileCheck } from 'lucide-react'
+import { Palette, CheckCircle2, Sparkles, FileCheck } from 'lucide-react'
 import { SectionBadge } from '@/components/ui/SectionBadge'
 
 // Placeholder gallery — substituir por fotos reais de personalizações Lamell.
@@ -102,8 +102,8 @@ export function DesignerMockupSection() {
           </p>
         </div>
 
-        {/* Três cards em grid, cada um com capa de imagem */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Dois cards em grid, cada um com capa de imagem */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {/* Card 1 — Designer parceiro */}
           <article className="anim-dms-card opacity-0 group bg-white rounded-3xl overflow-hidden border border-brand-black/5 shadow-xl hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 flex flex-col">
             <div className="relative aspect-[4/3] overflow-hidden">
@@ -125,72 +125,25 @@ export function DesignerMockupSection() {
                 Equipe gráfica parceira
               </span>
               <h3 className="text-2xl font-heading font-extrabold text-brand-black leading-tight">
-                Designer cuida<br/>da sua arte.
+                Design profissional<br/>para sua marca
               </h3>
               <p className="text-sm text-brand-black/70 font-medium leading-relaxed">
-                Basta mandar sua ideia e inspiração — nosso parceiro gráfico desenvolve a arte exclusiva do zero, seguindo a identidade da sua marca.
+                Você envia a ideia e a referência visual, e nossa equipe gráfica parceira desenvolve a arte exclusiva do zero, alinhada à identidade da sua marca.
               </p>
               <ul className="flex flex-col gap-2 mt-1">
                 <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
                   <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Você só manda a ideia e a inspiração
+                  Você envia apenas a ideia e a referência
                 </li>
                 <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
                   <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Até 2 alterações por estampa
+                  Até 2 ajustes incluídos por estampa
                 </li>
               </ul>
             </div>
           </article>
 
-          {/* Card 2 — Mockup 24h, com "24h" overlay */}
-          <article className="anim-dms-card opacity-0 group bg-white rounded-3xl overflow-hidden border border-brand-black/5 shadow-xl hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 flex flex-col">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/14.jpg"
-                alt="Mockup digital Lamell pronto para aprovação em até 24 horas"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/55 via-brand-orange/10 to-transparent" />
-              <div className="absolute top-4 left-4 w-11 h-11 rounded-xl bg-brand-orange flex items-center justify-center text-brand-beige shadow-lg">
-                <Clock size={20} strokeWidth={2.2} />
-              </div>
-              <div className="absolute bottom-3 right-4 leading-none">
-                <span className="text-5xl sm:text-6xl font-heading font-extrabold text-brand-beige drop-shadow-[0_3px_12px_rgba(213,0,132,0.55)] tracking-tight">
-                  24h
-                </span>
-              </div>
-              <div className="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-widest text-brand-beige/90">
-                Mockup pronto
-              </div>
-            </div>
-
-            <div className="p-6 lg:p-7 flex flex-col gap-4">
-              <span className="text-[11px] font-bold tracking-widest uppercase text-brand-orange">
-                Aprovação rápida
-              </span>
-              <h3 className="text-2xl font-heading font-extrabold text-brand-black leading-tight">
-                Mockup pronto<br/>pra aprovar.
-              </h3>
-              <p className="text-sm text-brand-black/70 font-medium leading-relaxed">
-                Em até 1 dia útil você recebe o mockup digital com a estampa aplicada na peça — pra conferir tudo antes da produção.
-              </p>
-              <ul className="flex flex-col gap-2 mt-1">
-                <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
-                  <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Posição, cor e tamanho conferidos
-                </li>
-                <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
-                  <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Produção começa após seu OK
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          {/* Card 3 — Valor da Arte (NOVO), com "R$ 40" overlay */}
+          {/* Card 2 — Valor da Arte, com "R$ 40" overlay */}
           <article className="anim-dms-card opacity-0 group bg-white rounded-3xl overflow-hidden border border-brand-black/5 shadow-xl hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 flex flex-col">
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
@@ -219,19 +172,19 @@ export function DesignerMockupSection() {
                 Valor da arte
               </span>
               <h3 className="text-2xl font-heading font-extrabold text-brand-black leading-tight">
-                R$ 40 uma vez<br/>e a arte fica guardada.
+                R$ 40, cobrado<br/>uma única vez
               </h3>
               <p className="text-sm text-brand-black/70 font-medium leading-relaxed">
-                Cobrado uma única vez pelo desenvolvimento técnico. <strong className="text-brand-black">Não enviamos o arquivo</strong> — ele fica salvo em nosso banco de dados para seus futuros pedidos, sem custo!
+                Esse valor cobre o desenvolvimento técnico da sua estampa. Após a criação, a arte fica armazenada em nosso banco de dados, disponível para uso em todos os seus próximos pedidos, sem nenhum custo adicional.
               </p>
               <ul className="flex flex-col gap-2 mt-1">
                 <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
                   <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Cobrado 1× só, nunca mais
+                  Cobrança única, sem mensalidades
                 </li>
                 <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
                   <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Arte guardada para pedidos futuros, sem custo
+                  Arte salva em nosso banco de dados para futuros pedidos, sem custo
                 </li>
               </ul>
             </div>

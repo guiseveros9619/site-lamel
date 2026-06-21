@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-brand-black/10 bg-brand-beige/90 backdrop-blur-md">
-      <div className="container mx-auto max-w-7xl flex h-24 lg:h-20 items-center justify-center lg:justify-between px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl flex h-12 lg:h-14 items-center justify-center lg:justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link href="/personalizacao" className="flex items-center gap-1 z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-md">
           <span className="font-cursive text-6xl sm:text-7xl leading-none tracking-wide text-brand-orange select-none">

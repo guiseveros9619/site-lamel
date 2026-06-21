@@ -1,10 +1,9 @@
 'use client'
 
 import { useRef } from 'react'
-import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 gsap.registerPlugin(useGSAP)
 
@@ -35,14 +34,6 @@ export function HeroPersonalizacao() {
             delay: 0.2,
           }
         )
-        gsap.to('.anim-hero-float', {
-          y: '-=12',
-          rotation: '+=3',
-          duration: 3,
-          yoyo: true,
-          repeat: -1,
-          ease: 'sine.inOut',
-        })
       } else {
         gsap.set('.anim-hero-text, .anim-hero-visual', { opacity: 1, y: 0, x: 0 })
       }
@@ -90,25 +81,21 @@ export function HeroPersonalizacao() {
             {/* Halo magenta atrás */}
             <div className="absolute inset-8 -z-10 bg-brand-orange/20 blur-3xl rounded-full" />
 
-            {/* Frame principal */}
+            {/* Frame principal — vídeo */}
             <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
-              <Image
-                src="/15.jpg"
-                alt="Camiseta Lamell Store personalizada com estampa premium"
-                fill
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="object-cover"
-                priority
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                src="/hero/personalizacao.mp4"
+                poster="/hero/personalizacao-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Camiseta Lamell Store personalizada — vídeo"
               />
               {/* Gradient sutil pra dar profundidade */}
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 via-transparent to-transparent pointer-events-none" />
-            </div>
-
-            {/* Adesivo flutuante "8 peças" */}
-            <div className="anim-hero-float absolute -top-6 -right-6 lg:-top-8 lg:-right-8 w-28 h-28 lg:w-32 lg:h-32 rounded-full bg-brand-orange text-brand-beige flex flex-col items-center justify-center shadow-xl border-4 border-brand-beige rotate-12">
-              <Sparkles size={20} className="mb-1" />
-              <span className="text-xs font-bold uppercase tracking-widest leading-none">a partir de</span>
-              <span className="font-heading font-extrabold text-2xl lg:text-3xl leading-none mt-0.5">8 peças</span>
             </div>
           </div>
         </div>

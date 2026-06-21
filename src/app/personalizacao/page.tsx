@@ -24,8 +24,8 @@ export default function PersonalizacaoPage() {
     <>
       <HeroPersonalizacao />
       <PriceCatalog />
-      <SizeGuideSection />
       <DesignerMockupSection />
+      <SizeGuideSection />
       <PersonalizacaoSteps />
 
       <BrandPromoSection

@@ -166,13 +166,13 @@ export function PriceCatalog() {
                   Algodão premium
                 </span>
               </div>
-              <div className="p-5 sm:p-6 flex flex-col gap-1.5">
-                <h3 className="font-extrabold text-xl sm:text-2xl text-brand-black leading-tight">
+              <div className="p-5 flex flex-col gap-1">
+                <h3 className="font-bold text-lg text-brand-black leading-snug">
                   {item.modelo}
                 </h3>
-                <p className="flex items-baseline gap-2">
+                <p className="flex items-baseline gap-1.5">
                   <span className="text-sm font-medium text-brand-black/50">A partir de</span>
-                  <span className="text-brand-orange font-extrabold text-2xl sm:text-3xl">
+                  <span className="text-brand-orange font-bold text-lg">
                     {item.preco}
                   </span>
                 </p>
@@ -182,12 +182,6 @@ export function PriceCatalog() {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-7xl px-6 lg:px-8">
-        <p className="text-center text-sm text-brand-black/50 italic mt-8">
-          Verificar disponibilidade de estoque. Valores iniciais — quantidade mínima de 8 peças por
-          pedido.
-        </p>
-      </div>
     </section>
   )
 }
