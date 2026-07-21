@@ -5,7 +5,7 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Palette, CheckCircle2, Sparkles, FileCheck } from 'lucide-react'
+import { Palette, CheckCircle2, Sparkles } from 'lucide-react'
 import { SectionBadge } from '@/components/ui/SectionBadge'
 
 // Placeholder gallery — substituir por fotos reais de personalizações Lamell.
@@ -95,10 +95,10 @@ export function DesignerMockupSection() {
             </SectionBadge>
           </div>
           <h2 className="anim-dms-header opacity-0 text-5xl sm:text-6xl font-heading font-extrabold mt-6 mb-6 text-brand-black text-balance leading-tight">
-            Designer cria sua arte<br/>e ela fica guardada pra sempre.
+            Sua marca merece uma identidade exclusiva.
           </h2>
           <p className="anim-dms-header opacity-0 text-lg sm:text-xl text-brand-black/75 font-medium leading-relaxed max-w-2xl mx-auto">
-            Você não precisa contratar designer. Basta mandar sua ideia e inspiração — nosso parceiro gráfico desenvolve a arte do zero, com a identidade da sua marca, e guardamos tudo no nosso banco para os seus próximos pedidos, sem custo.
+            Envie sua inspiração e nós transformamos em uma arte profissional. Além disso, armazenamos todos os arquivos para que você possa reproduzir seus modelos sempre que desejar, sem pagar novamente pela criação.
           </p>
         </div>
 
@@ -106,10 +106,10 @@ export function DesignerMockupSection() {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {/* Card 1 — Designer parceiro */}
           <article className="anim-dms-card opacity-0 group bg-white rounded-3xl overflow-hidden border border-brand-black/5 shadow-xl hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 flex flex-col">
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[4/3] overflow-hidden bg-white">
               <Image
-                src="/4.jpg"
-                alt="Designer gráfico parceiro Lamell criando a arte da estampa"
+                src="/equipe-grafica.png"
+                alt="Exemplos de estampas e artes criadas pela equipe gráfica parceira Lamell"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
@@ -125,7 +125,7 @@ export function DesignerMockupSection() {
                 Equipe gráfica parceira
               </span>
               <h3 className="text-2xl font-heading font-extrabold text-brand-black leading-tight">
-                Design profissional<br/>para sua marca
+                Design cuida<br/>da sua arte.
               </h3>
               <p className="text-sm text-brand-black/70 font-medium leading-relaxed">
                 Você envia a ideia e a referência visual, e nossa equipe gráfica parceira desenvolve a arte exclusiva do zero, alinhada à identidade da sua marca.
@@ -143,28 +143,16 @@ export function DesignerMockupSection() {
             </div>
           </article>
 
-          {/* Card 2 — Valor da Arte, com "R$ 40" overlay */}
+          {/* Card 2 — Valor da Arte (gêmeo do card esquerdo; valor no lugar da imagem) */}
           <article className="anim-dms-card opacity-0 group bg-white rounded-3xl overflow-hidden border border-brand-black/5 shadow-xl hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 flex flex-col">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/17.jpg"
-                alt="Arte personalizada Lamell — arquivo gráfico desenvolvido para o cliente"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-purple/55 via-brand-orange/15 to-transparent" />
-              <div className="absolute top-4 left-4 w-11 h-11 rounded-xl bg-brand-orange flex items-center justify-center text-brand-beige shadow-lg">
-                <FileCheck size={20} strokeWidth={2.2} />
-              </div>
-              <div className="absolute bottom-3 right-4 leading-none">
-                <span className="text-5xl sm:text-6xl font-heading font-extrabold text-brand-beige drop-shadow-[0_3px_12px_rgba(213,0,132,0.55)] tracking-tight">
-                  R$ 40
-                </span>
-              </div>
-              <div className="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-widest text-brand-beige/90">
+            {/* Valor em destaque — ocupa a mesma área (4/3) da imagem do card esquerdo */}
+            <div className="relative aspect-[4/3] overflow-hidden bg-brand-pink/60 flex flex-col items-center justify-center text-center px-6">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-orange">
                 Valor único
-              </div>
+              </span>
+              <span className="font-heading font-extrabold text-5xl sm:text-6xl leading-none mt-2">
+                R$ 50,00
+              </span>
             </div>
 
             <div className="p-6 lg:p-7 flex flex-col gap-4">
@@ -172,7 +160,7 @@ export function DesignerMockupSection() {
                 Valor da arte
               </span>
               <h3 className="text-2xl font-heading font-extrabold text-brand-black leading-tight">
-                R$ 40, cobrado<br/>uma única vez
+                R$ 50, cobrado<br/>uma única vez
               </h3>
               <p className="text-sm text-brand-black/70 font-medium leading-relaxed">
                 Esse valor cobre o desenvolvimento técnico da sua estampa. Após a criação, a arte fica armazenada em nosso banco de dados, disponível para uso em todos os seus próximos pedidos, sem nenhum custo adicional.

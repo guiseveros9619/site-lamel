@@ -27,7 +27,7 @@ const PILLARS = [
   {
     icon: <Palette size={28} />,
     title: 'Arte que rende sempre',
-    description: 'Valor da arte de R$ 40,00 cobrado uma única vez. Reutilize a mesma arte quantas vezes quiser, sem custo adicional.',
+    description: 'Valor da arte de R$ 50,00 cobrado uma única vez. Reutilize a mesma arte quantas vezes quiser, sem custo adicional.',
     color: 'bg-brand-blue text-brand-black',
   },
   {

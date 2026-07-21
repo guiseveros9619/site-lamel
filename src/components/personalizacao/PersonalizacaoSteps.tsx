@@ -424,7 +424,7 @@ export function PersonalizacaoSteps() {
                   Envie sua arte em formato PDF informando: posição da estampa (frente, costas ou lateral), cores da estampa e tamanho conforme nosso guia técnico. Inclui até 2 alterações por estampa para garantir o resultado perfeito.
                </p>
                <div className="inline-flex items-center gap-2 bg-brand-orange text-brand-beige px-4 py-2 rounded-full text-sm font-bold">
-                  R$ 40,00 — valor único da arte (reutilizável)
+                  R$ 50,00 — valor único da arte (reutilizável)
                </div>
            </div>
            

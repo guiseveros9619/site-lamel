@@ -10,7 +10,7 @@ const FAQS = [
   },
   {
     q: 'Como funciona o valor da arte? Pago em todo pedido?',
-    a: 'O valor da arte é único: R$ 40,00 cobrado apenas uma vez, mesmo que você já tenha o arquivo pronto. Esse custo cobre o preparo técnico feito por parceiro gráfico especializado. Depois disso, você pode reutilizar a mesma arte em quantas personalizações futuras quiser, sem custo adicional.'
+    a: 'O valor da arte é único: R$ 50,00 cobrado apenas uma vez, mesmo que você já tenha o arquivo pronto. Esse custo cobre o preparo técnico feito por parceiro gráfico especializado. Depois disso, você pode reutilizar a mesma arte em quantas personalizações futuras quiser, sem custo adicional.'
   },
   {
     q: 'Quais modelos de camisetas posso personalizar?',

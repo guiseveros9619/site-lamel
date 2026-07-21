@@ -117,9 +117,9 @@ export function PriceCatalog() {
             Valores das Peças
           </h2>
           <p className="text-lg text-brand-black/70 max-w-2xl mx-auto font-medium">
-            Veja a tabela completa de modelos prontos para personalizar. Todas as peças são produzidas
-            com algodão premium e finalizadas em casa — costura, estamparia e acabamento sob o nosso
-            controle de qualidade.
+            Veja nossa linha completa de peças prontas para personalizar. Produzidas com algodão
+            premium, modelagens exclusivas e acabamento de alta qualidade, garantindo conforto,
+            durabilidade e excelente aceitação nas vendas.
           </p>
         </div>
       </div>
