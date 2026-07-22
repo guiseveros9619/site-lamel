@@ -46,13 +46,13 @@ export function HeroPersonalizacao() {
       ref={containerRef}
       className="relative lg:min-h-[85vh] overflow-hidden bg-brand-beige text-brand-black border-t border-brand-black/5 flex flex-col lg:justify-center pt-32 lg:pt-24 pb-12 lg:pb-16"
     >
-      {/* Background blur — magenta soft */}
+      {/* Background blur, magenta soft */}
       <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-brand-orange/10 blur-[160px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-purple/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Coluna esquerda — texto */}
+          {/* Coluna esquerda, texto */}
           <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <h1 className="anim-hero-text text-5xl sm:text-6xl lg:text-[4.5rem] font-heading font-extrabold leading-[1.05] tracking-tight mb-8 text-brand-black text-balance">
               Transforme sua ideia<br/>
@@ -76,12 +76,12 @@ export function HeroPersonalizacao() {
             </div>
           </div>
 
-          {/* Coluna direita — visual com imagem em frame premium */}
+          {/* Coluna direita, visual com imagem em frame premium */}
           <div className="anim-hero-visual relative aspect-[4/5] max-w-md lg:max-w-none w-full mx-auto">
             {/* Halo magenta atrás */}
             <div className="absolute inset-8 -z-10 bg-brand-orange/20 blur-3xl rounded-full" />
 
-            {/* Frame principal — vídeo */}
+            {/* Frame principal, vídeo */}
             <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
               <video
                 className="absolute inset-0 w-full h-full object-cover"
@@ -92,7 +92,7 @@ export function HeroPersonalizacao() {
                 loop
                 playsInline
                 preload="metadata"
-                aria-label="Camiseta Lamell Store personalizada — vídeo"
+                aria-label="Camiseta Lamell Store personalizada, vídeo"
               />
               {/* Gradient sutil pra dar profundidade */}
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 via-transparent to-transparent pointer-events-none" />

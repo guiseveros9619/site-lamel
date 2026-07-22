@@ -8,14 +8,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Palette, CheckCircle2, Sparkles } from 'lucide-react'
 import { SectionBadge } from '@/components/ui/SectionBadge'
 
-// Placeholder gallery — substituir por fotos reais de personalizações Lamell.
+// Galeria de personalizações reais, modelos e peças dobradas intercalados.
 const EXAMPLE_IMAGES = [
-  { src: '/3.jpg', alt: 'Exemplo de camiseta personalizada Lamell — estampa frontal' },
-  { src: '/10.jpg', alt: 'Exemplo de camiseta personalizada Lamell — peça oversized' },
-  { src: '/16.jpg', alt: 'Exemplo de camiseta personalizada Lamell — gola alta' },
-  { src: '/22.jpg', alt: 'Exemplo de camiseta personalizada Lamell — coleção infantil' },
-  { src: '/19.jpg', alt: 'Exemplo de camiseta personalizada Lamell — estampa premium' },
-  { src: '/12.jpg', alt: 'Exemplo de camiseta personalizada Lamell — caimento' },
+  { src: '/galeria/g-4465.jpg', alt: 'Camiseta personalizada Lamell, modelo com estampa Hello Kitty Baseball' },
+  { src: '/galeria/g-9844.jpg', alt: 'Peças personalizadas Lamell dobradas, estampas cristãs' },
+  { src: '/galeria/g-8461.jpg', alt: 'Camiseta personalizada Lamell, modelo com estampa Há Poder no Nome de Jesus' },
+  { src: '/galeria/g-8374.jpg', alt: 'Camisetas personalizadas Lamell, casal com estampa de leão' },
+  { src: '/galeria/g-8297.jpg', alt: 'Peças personalizadas Lamell dobradas, coleção em tons terrosos' },
+  { src: '/galeria/g-9875.jpg', alt: 'Camisetas personalizadas Lamell, casal com estampas de leão e cruz' },
 ] as const
 
 if (typeof window !== 'undefined') {
@@ -102,84 +102,65 @@ export function DesignerMockupSection() {
           </p>
         </div>
 
-        {/* Dois cards em grid, cada um com capa de imagem */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
-          {/* Card 1 — Designer parceiro */}
-          <article className="anim-dms-card opacity-0 group bg-white rounded-3xl overflow-hidden border border-brand-black/5 shadow-xl hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 flex flex-col">
-            <div className="relative aspect-[4/3] overflow-hidden bg-white">
-              <Image
-                src="/equipe-grafica.png"
-                alt="Exemplos de estampas e artes criadas pela equipe gráfica parceira Lamell"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/25 via-transparent to-transparent" />
-              <div className="absolute top-4 left-4 w-11 h-11 rounded-xl bg-brand-orange flex items-center justify-center text-brand-beige shadow-lg">
-                <Palette size={20} strokeWidth={2.2} />
-              </div>
+        {/* Painel único, arte + valor, estilo elegante do site */}
+        <article className="anim-dms-card opacity-0 group bg-white rounded-[2rem] overflow-hidden border border-brand-black/5 shadow-xl hover:shadow-2xl transition-all duration-500 max-w-5xl mx-auto grid lg:grid-cols-2 items-stretch">
+          {/* Coluna visual, showcase da arte */}
+          <div className="relative min-h-[300px] lg:min-h-full overflow-hidden bg-white border-b lg:border-b-0 lg:border-r border-brand-black/5">
+            <Image
+              src="/equipe-grafica.png"
+              alt="Exemplos de estampas e artes criadas pela equipe gráfica parceira Lamell"
+              fill
+              sizes="(max-width: 1024px) 100vw, 520px"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/25 via-transparent to-transparent" />
+            <div className="absolute top-5 left-5 w-12 h-12 rounded-2xl bg-brand-orange flex items-center justify-center text-brand-beige shadow-lg">
+              <Palette size={22} strokeWidth={2.2} />
             </div>
+          </div>
 
-            <div className="p-6 lg:p-7 flex flex-col gap-4">
-              <span className="text-[11px] font-bold tracking-widest uppercase text-brand-orange">
-                Equipe gráfica parceira
-              </span>
-              <h3 className="text-2xl font-heading font-extrabold text-brand-black leading-tight">
-                Design cuida<br/>da sua arte.
-              </h3>
-              <p className="text-sm text-brand-black/70 font-medium leading-relaxed">
-                Você envia a ideia e a referência visual, e nossa equipe gráfica parceira desenvolve a arte exclusiva do zero, alinhada à identidade da sua marca.
-              </p>
-              <ul className="flex flex-col gap-2 mt-1">
-                <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
-                  <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Você envia apenas a ideia e a referência
-                </li>
-                <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
-                  <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Até 2 ajustes incluídos por estampa
-                </li>
-              </ul>
-            </div>
-          </article>
+          {/* Coluna de conteúdo, serviço + valor */}
+          <div className="p-8 lg:p-10 flex flex-col justify-center gap-5">
+            <h3 className="text-3xl sm:text-4xl font-heading font-extrabold leading-tight tracking-tight">
+              Sua arte exclusiva,<br /><span className="font-heading-italic">criada do zero.</span>
+            </h3>
 
-          {/* Card 2 — Valor da Arte (gêmeo do card esquerdo; valor no lugar da imagem) */}
-          <article className="anim-dms-card opacity-0 group bg-white rounded-3xl overflow-hidden border border-brand-black/5 shadow-xl hover:shadow-2xl hover:border-brand-orange/30 transition-all duration-500 flex flex-col">
-            {/* Valor em destaque — ocupa a mesma área (4/3) da imagem do card esquerdo */}
-            <div className="relative aspect-[4/3] overflow-hidden bg-brand-pink/60 flex flex-col items-center justify-center text-center px-6">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-orange">
-                Valor único
-              </span>
-              <span className="font-heading font-extrabold text-5xl sm:text-6xl leading-none mt-2">
-                R$ 50,00
-              </span>
-            </div>
+            <p className="text-sm sm:text-base text-brand-black/70 font-medium leading-relaxed">
+              Você envia a referência, nossa equipe cria o resto.
+            </p>
 
-            <div className="p-6 lg:p-7 flex flex-col gap-4">
-              <span className="text-[11px] font-bold tracking-widest uppercase text-brand-orange">
+            <ul className="flex flex-col gap-3">
+              <li className="flex items-start gap-2.5 text-sm font-semibold text-brand-black/80">
+                <CheckCircle2 size={18} className="text-brand-orange shrink-0 mt-0.5" />
+                Até 2 ajustes inclusos por estampa
+              </li>
+              <li className="flex items-start gap-2.5 text-sm font-semibold text-brand-black/80">
+                <CheckCircle2 size={18} className="text-brand-orange shrink-0 mt-0.5" />
+                100% alinhada à identidade da sua marca
+              </li>
+              <li className="flex items-start gap-2.5 text-sm font-semibold text-brand-black/80">
+                <CheckCircle2 size={18} className="text-brand-orange shrink-0 mt-0.5" />
+                Fica salva para os próximos pedidos, sem custo
+              </li>
+            </ul>
+
+            {/* Bloco de preço, única ocorrência do valor */}
+            <div className="mt-1 rounded-2xl bg-brand-pink/50 p-5">
+              <span className="block text-[11px] font-bold uppercase tracking-widest text-brand-orange">
                 Valor da arte
               </span>
-              <h3 className="text-2xl font-heading font-extrabold text-brand-black leading-tight">
-                R$ 50, cobrado<br/>uma única vez
-              </h3>
-              <p className="text-sm text-brand-black/70 font-medium leading-relaxed">
-                Esse valor cobre o desenvolvimento técnico da sua estampa. Após a criação, a arte fica armazenada em nosso banco de dados, disponível para uso em todos os seus próximos pedidos, sem nenhum custo adicional.
-              </p>
-              <ul className="flex flex-col gap-2 mt-1">
-                <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
-                  <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Cobrança única, sem mensalidades
-                </li>
-                <li className="flex items-center gap-2 text-xs font-bold text-brand-black/80">
-                  <CheckCircle2 size={15} className="text-brand-orange shrink-0" />
-                  Arte salva em nosso banco de dados para futuros pedidos, sem custo
-                </li>
-              </ul>
+              <span className="mt-1 flex items-start font-heading font-extrabold leading-[0.9] tracking-tight">
+                <span className="text-xl sm:text-2xl mt-1 mr-0.5">R$</span>
+                <span className="text-5xl sm:text-6xl">50</span>
+              </span>
+              <span className="mt-1 block text-xs font-semibold text-brand-black/60">
+                Pague uma vez · use para sempre
+              </span>
             </div>
-          </article>
-        </div>
+          </div>
+        </article>
 
-        {/* Galeria de exemplos — mais imagens reforçando o serviço */}
+        {/* Galeria de exemplos, mais imagens reforçando o serviço */}
         <div className="anim-dms-card opacity-0 mt-16 lg:mt-20">
           <p className="text-center text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-black/50 mb-6">
             Exemplos de personalizações reais

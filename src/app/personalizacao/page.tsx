@@ -31,9 +31,11 @@ export default function PersonalizacaoPage() {
       <BrandPromoSection
         tag="Qualidade Premium"
         title="Personalização com a qualidade que sua marca merece."
-        description="Cada peça da Lamell Store passa pelo nosso rigoroso controle de qualidade — do tecido à estampa. Algodão premium, costura reforçada e estamparia profissional garantem peças que vestem bem, duram muito e representam a sua marca com o acabamento que ela merece."
+        description="Na Lamell Store, cada detalhe é pensado para entregar peças à altura da sua marca. Utilizamos malhas Menegotti, 100% algodão premium, com estampa em DTF de alta definição, tecnologia que garante cores vivas e fiéis, sem desbotar, craquelar ou rachar com o tempo. O resultado são peças com caimento impecável, conforto no uso diário e durabilidade que acompanha sua marca em cada nova coleção."
+        videoPath="/videos/qualidade.mp4"
+        posterPath="/videos/qualidade-poster.jpg"
         imagePath="/8.jpg"
-        imageAlt="Detalhe de camiseta personalizada Lamell Store — acabamento premium"
+        imageAlt="Vídeo de peça personalizada Lamell Store, acabamento premium"
         isImageLeft={true}
         stickers={{
           greenFlower: true,
@@ -42,9 +44,11 @@ export default function PersonalizacaoPage() {
 
       <FAQPersonalizacao />
       <CallToAction
-        title="Produção profissional. Qualidade premium."
-        description="Envio para todo Brasil. Crie agora a sua coleção personalizada com a Lamell Store."
+        eyebrow="Vamos começar"
+        title="Sua coleção premium começa agora."
+        description="Fale com a nossa equipe e receba um orçamento sob medida para a sua marca, produção premium, do algodão à estampa, com envio para todo o Brasil."
         buttonText="Solicitar orçamento"
+        note="Resposta rápida · Sem compromisso"
         color="pink"
       />
     </>

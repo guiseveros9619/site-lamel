@@ -29,6 +29,8 @@ interface BrandPromoSectionProps {
   buttonLink?: string
   imagePath: string
   imageAlt: string
+  videoPath?: string
+  posterPath?: string
   isImageLeft?: boolean
   stickers?: {
     smiley?: boolean
@@ -50,6 +52,8 @@ export function BrandPromoSection({
   buttonLink = '#',
   imagePath,
   imageAlt,
+  videoPath,
+  posterPath,
   isImageLeft = false,
   stickers = {}
 }: BrandPromoSectionProps) {
@@ -192,7 +196,20 @@ export function BrandPromoSection({
 
               {/* Main Image Content */}
               <div className="w-full lg:w-[85%] h-full relative rounded-[2rem] overflow-hidden shadow-2xl border-2 border-zinc-800">
-                 <Image src={imagePath} alt={imageAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                 {videoPath ? (
+                   <video
+                     src={videoPath}
+                     poster={posterPath ?? imagePath}
+                     autoPlay
+                     muted
+                     loop
+                     playsInline
+                     aria-label={imageAlt}
+                     className="w-full h-full object-cover"
+                   />
+                 ) : (
+                   <Image src={imagePath} alt={imageAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                 )}
                  {/* Darkening gradient over image */}
                  <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent"></div>
               </div>

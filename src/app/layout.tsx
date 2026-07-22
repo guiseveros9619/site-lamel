@@ -60,9 +60,9 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
             --font-satoshi: 'Satoshi', system-ui, sans-serif;
-            /* Heading principal da Lamell — Playfair Display (serifada display,
+            /* Heading principal da Lamell, Playfair Display (serifada display,
                Google Fonts). Look editorial/elegante aplicado em TODOS os
-               headers/títulos via .font-heading e h1–h6. */
+               headers/titulos via .font-heading e h1 a h6. */
             --font-made-tommy: 'Playfair Display', Georgia, 'Times New Roman', serif;
             /* Fonte secundária do anexo: a mesma família em itálico, usada como
                acento (.font-heading-italic). */

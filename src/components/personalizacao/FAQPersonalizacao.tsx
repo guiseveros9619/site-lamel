@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: 'Posso pedir alterações na estampa depois de enviar?',
-    a: 'Sim — incluímos até 2 alterações por estampa para garantir qualidade e agilidade no resultado final.'
+    a: 'Sim, incluímos até 2 alterações por estampa para garantir qualidade e agilidade no resultado final.'
   },
   {
     q: 'Como sei como vai ficar antes de produzir?',
